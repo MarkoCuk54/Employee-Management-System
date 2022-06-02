@@ -5,5 +5,11 @@ from flask import render_template
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
-    return "<p>Hello, Marko!</p>"
+def login():
+    return render_template('login.html')
+
+
+
+
+# auto restart server on change
+app.run(debug=True)
