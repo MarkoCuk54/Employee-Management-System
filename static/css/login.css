@@ -2,7 +2,7 @@ body {
     font-size: 1.6rem;
     font-family: "Open Sans", sans-serif;
     color: #2b3e51;
-    background-image: url("../img/bg-login.jpg");
+    background-image: url("../img/login-bg.jpg");
     background-size: cover;
 }
 
@@ -50,7 +50,7 @@ a:active:hover {
     padding-left: 0px;
     padding-right: 0px;
     padding-bottom: 20px;
-    opacity: 80%;
+    opacity: 90%;
 }
 
 h2 {
