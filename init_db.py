@@ -1,4 +1,3 @@
-import os
 from db_data import conn
 
 # Open a cursor to perform database operations
@@ -20,6 +19,5 @@ cur.execute('INSERT INTO admin (username, password)'
 
 
 conn.commit()
-
 cur.close()
 conn.close()
