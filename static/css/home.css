@@ -1,8 +1,9 @@
 .header {
     padding: 80px; /* some padding */
     text-align: center; /* center the text */
-    background: #1a7bbc; /* blue background */
+    background: hsl(204, 76%, 42%); /* blue background */
     color: white; /* white text color */
+    background-image: url("emerus.jpg");
   }
   
   /* Increase the font size of the <h1> element */
@@ -79,8 +80,8 @@
   }
 
   .footer {
-    padding: 20px; /* Some padding */
-    text-align: center; /* Center text*/
-    background: #ddd; /* Grey background */
-  }
+  padding: 20px; /* Some padding */
+  text-align: center; /* Center text*/
+  background: #ddd; /* Grey background */
+}
   
