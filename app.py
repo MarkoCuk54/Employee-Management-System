@@ -34,6 +34,10 @@ def loginSuccs():
         return render_template("login.html",data =  message)
 
 
+@app.route("/logout")
+def logout():
+    return render_template("login.html")
+
 @app.route("/svi")
 def svi():
     return render_template("svi.html")
