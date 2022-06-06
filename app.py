@@ -1,4 +1,5 @@
-from flask import Flask
+from re import S
+from flask import Flask, request
 from flask import render_template
 from db_data import conn
 
@@ -10,10 +11,12 @@ def login():
 
 @app.route("/login", methods=["POST"])
 def loginSuccs():
+    username =  request.form['username'] 
+    password = request.form['password']
     cur = conn.cursor()
     cur.execute('SELECT * FROM admin;')
     admin = cur.fetchall()
-    print(admin)
+    print(admin, username, password)
     cur.close()
     return render_template('home.html')
 
