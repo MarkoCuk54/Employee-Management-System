@@ -6,12 +6,17 @@ app = Flask(__name__)
 
 @app.route("/")
 def login():
+    return render_template('login.html')
+
+@app.route("/login", methods=["POST"])
+def loginSuccs():
     cur = conn.cursor()
     cur.execute('SELECT * FROM admin;')
     admin = cur.fetchall()
     print(admin)
     cur.close()
     return render_template('login.html')
+
 
 
 
