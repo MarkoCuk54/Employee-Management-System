@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    {% if error %}
-    <h2 class="error">{{ error | safe }}</h2>
+    {% if data %}
+    <h2 style="color: red;" class="error">{{ data}}</h2>
     {% endif %}
     <div id="login-form-wrap">
         <h2>Emerus</h2>
@@ -21,7 +21,7 @@
                     <div class="content">
                         <h2> Baza Podataka Radnika</h2>
                         <form action="" method="post">
-                            <input type="text" id="username" name="username" placeholder="Korisnik" value="{{
+                            <input type="text" id="username" name="username" placeholder="ID" value="{{
                         request.form.username }}">
                             <br>
                             <br>
