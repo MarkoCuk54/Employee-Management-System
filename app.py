@@ -15,7 +15,7 @@ def loginSuccs():
     admin = cur.fetchall()
     print(admin)
     cur.close()
-    return render_template('login.html')
+    return render_template('home.html')
 
 
 
