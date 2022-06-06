@@ -21,7 +21,9 @@ def loginSuccs():
     return render_template('home.html', data = username)
 
 
-
+@app.route("/svi")
+def sviRadnici():
+    return render_template("svi.html")
 
 # auto restart server on change
 app.run(debug=True)
