@@ -22,11 +22,11 @@ def loginSuccs():
 
 
 @app.route("/svi")
-def sviRadnici():
+def svi():
     return render_template("svi.html")
 
 @app.route("/dodaj")
-def dodajZaposlenika():
+def dodaj():
     return render_template("dodaj.html")
 
 # auto restart server on change
