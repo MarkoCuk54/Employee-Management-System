@@ -1,3 +1,4 @@
+from email import message
 from re import S
 from flask import Flask, request
 from flask import render_template
@@ -11,14 +12,22 @@ def login():
 
 @app.route("/login", methods=["POST"])
 def loginSuccs():
-    username =  request.form['username'] 
-    password = request.form['password']
-    cur = conn.cursor()
-    cur.execute('SELECT * FROM admin;')
-    admin = cur.fetchall()
-    print(admin, username, password)
-    cur.close()
-    return render_template('home.html', data = username)
+    try:
+        username =  request.form['username'] 
+        password = request.form['password']
+        cur = conn.cursor()
+        bolean = cur.execute("SELECT * FROM admin where id = " + username)
+        bolean = cur.fetchall()
+        if(bolean != []):
+            print(bolean)
+            cur.close()
+            return render_template('home.html', data = bolean[0][1])
+        else:
+            message = "Error"
+            return render_template("login.html",  data = message)
+    except:
+        message = "Error"
+        return render_template("login.html",data =  message)
 
 
 @app.route("/svi")
