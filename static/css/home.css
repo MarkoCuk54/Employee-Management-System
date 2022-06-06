@@ -52,17 +52,17 @@
   /* Sidebar/left column */
   .side {
     flex: 30%; /* Set the width of the sidebar */
-    background-color: #f1f1f1; /* Grey background color */
+    background-color: #f1f1f19c; /* Grey background color */
     padding: 20px; /* Some padding */
   }
   
   /* Main column */
   .main {
     flex: 70%; /* Set the width of the main content */
-    background-color: white; /* White background color */
+    background-color: rgba(255, 255, 255, 0.527); /* White background color */
     padding: 20px; /* Some padding */
   }
-
+  
   /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
     .row {
@@ -77,3 +77,10 @@
       width: 100%;
     }
   }
+
+  .footer {
+    padding: 20px; /* Some padding */
+    text-align: center; /* Center text*/
+    background: #ddd; /* Grey background */
+  }
+  
