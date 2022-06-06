@@ -1,5 +1,6 @@
 from email import message
 from re import S
+from xmlrpc.client import boolean
 from flask import Flask, request
 from flask import render_template
 from db_data import conn
@@ -18,8 +19,7 @@ def loginSuccs():
         cur = conn.cursor()
         bolean = cur.execute("SELECT * FROM admin where id = " + username)
         bolean = cur.fetchall()
-        if(bolean != []):
-            print(bolean)
+        if(bolean != [] and password == bolean[0][2]):
             cur.close()
             return render_template('home.html', data = bolean[0][1])
         else:
