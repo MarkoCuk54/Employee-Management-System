@@ -46,5 +46,9 @@ def svi():
 def dodaj():
     return render_template("dodaj.html")
 
+@app.route("/događaji")
+def događaji():
+    return render_template("događaji.html")
+
 # auto restart server on change
 app.run(debug=True)
