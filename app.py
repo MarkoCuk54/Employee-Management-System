@@ -25,5 +25,9 @@ def loginSuccs():
 def sviRadnici():
     return render_template("svi.html")
 
+@app.route("/dodaj")
+def dodajZaposlenika():
+    return render_template("dodaj.html")
+
 # auto restart server on change
 app.run(debug=True)
