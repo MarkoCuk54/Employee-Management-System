@@ -23,14 +23,15 @@ def loginSuccs():
             cur.close()
             return render_template('home.html', data = bolean[0][1])
         else:
+            cur.execute("ROLLBACK")
+            conn.commit()
             message = "Nemate pristup ovoj aplikaciji"
             return render_template("login.html",  data = message)
     except:
+        cur.execute("ROLLBACK")
+        conn.commit()
         message = "Nemate pristup ovoj aplikaciji"
         return render_template("login.html",data =  message)
-
-
-
 
 
 @app.route("/svi")
