@@ -1,6 +1,4 @@
-from email import message
 from re import S
-from xmlrpc.client import boolean
 from flask import Flask, request
 from flask import render_template
 from db_data import conn
@@ -13,24 +11,14 @@ def login():
 
 @app.route("/login", methods=["POST"])
 def loginSuccs():
-    try:
-        username =  request.form['username'] 
-        password = request.form['password']
-        cur = conn.cursor()
-        bolean = cur.execute("SELECT * FROM admin where id = " + username)
-        bolean = cur.fetchall()
-        if(bolean != [] and password == bolean[0][2]):
-            cur.close()
-            return render_template('home.html', data = bolean[0][1])
-        else:
-            message = "Nemate pristup ovoj aplikaciji"
-            return render_template("login.html",  data = message)
-    except:
-        message = "Nemate pristup ovoj aplikaciji"
-        return render_template("login.html",data =  message)
-
-
-
+    username =  request.form['username'] 
+    password = request.form['password']
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM admin;')
+    admin = cur.fetchall()
+    print(admin, username, password)
+    cur.close()
+    return render_template('home.html', data = username)
 
 
 @app.route("/svi")
@@ -39,7 +27,12 @@ def svi():
 
 @app.route("/dodaj")
 def dodaj():
+    print("test")
     return render_template("dodaj.html")
+
+@app.route("/događaji")
+def događaji():
+    return render_template("događaji.html")
 
 # auto restart server on change
 app.run(debug=True)
