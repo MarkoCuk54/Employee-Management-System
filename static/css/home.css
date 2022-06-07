@@ -1,16 +1,22 @@
+body, html {
+  height: 100%;
+}
 
+/* The hero image */
+.hero-image {
+/* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("emerus.jpg");
 
-.header {
-    padding: 80px; /* some padding */
-    text-align: center; /* center the text */
-    background: #1a7bbc; /* blue background */
-    color: white; /* white text color */
-  }
-  
-  /* Increase the font size of the <h1> element */
-  .header h1 {
-    font-size: 40px;
-  }
+/* Set a specific height */
+height: 50%;
+
+/* Position and center the image to scale nicely on all screens */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+}
+
 
   /* Style the top navigation bar */
 .navbar {
