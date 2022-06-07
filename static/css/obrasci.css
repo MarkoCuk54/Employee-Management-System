@@ -8,6 +8,27 @@
     font-size: 40px;
   }
 
+  .vertical-menu {
+    width: 100%; /* Set a width if you like */
+  }
+  
+  .vertical-menu a {
+    background-color: #1aa4bc; /* Blue background color */
+    color: white; /* Black text color */
+    display: inline-block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .vertical-menu a:hover {
+    background-color: #ccc; /* Dark grey background on mouse-over */
+  }
+  
+  .vertical-menu a.active {
+    background-color: #04AA6D; /* Add a green color to the "active/current" link */
+    color: white;
+  }
+
   .footer {
     padding: 20px; /* Some padding */
     text-align: center; /* Center text*/
