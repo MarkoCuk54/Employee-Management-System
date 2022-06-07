@@ -20,17 +20,17 @@
 
   /* Style the top navigation bar */
 .navbar {
-  width: 100%; /* Full-width */
-  background-color: #1aa4bc; /* Dark-grey background */
-  overflow: auto; /* Overflow due to float */
+    width: 100%; /* Full-width */
+    background-color: #555; /* Dark-grey background */
+    overflow: auto; /* Overflow due to float */
   }
   
   /* Style the navigation bar links */
   .navbar a {
     float: left; /* Float links side by side */
     text-align: center; /* Center-align text */
-    width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
-    padding: 12px 0px; /* Some top and bottom padding */
+    width: 12%; /* Equal width (5 icons with 20% width each = 100%) */
+    padding: 12px 0; /* Some top and bottom padding */
     transition: all 0.3s ease; /* Add transition for hover effects */
     color: white; /* White text color */
     font-size: 36px; /* Increased font size */
@@ -43,7 +43,7 @@
   
   /* Change color on hover/mouse-over */
   .navbar a:hover {
-    background-color: #1aa4bc; /* Add a hover color */
+    background-color: #000; /* Add a hover color */
   }
 
   /* Ensure proper sizing */
