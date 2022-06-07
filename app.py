@@ -1,6 +1,3 @@
-from email import message
-from re import S
-from xmlrpc.client import boolean
 from flask import Flask, request
 from flask import render_template
 from db_data import conn
