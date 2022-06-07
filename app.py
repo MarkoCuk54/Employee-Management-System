@@ -54,5 +54,9 @@ def dodaj():
 def događaji():
     return render_template("događaji.html")
 
+@app.route("/obrasci")
+def obrasci():
+    return render_template("obrasci.html")
+
 # auto restart server on change
 app.run(debug=True)
