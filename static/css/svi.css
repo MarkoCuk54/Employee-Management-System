@@ -1,9 +1,14 @@
-/* Add a blue background color to the top navigation bar */
-
-.topnav {
-    overflow: hidden;
-    background-color: #1a7bbc;
+p {
+    display: inline;
+    margin-top: 20px;
 }
+
+.radnik {
+    margin-top: 20px;
+}
+
+
+/* Add a blue background color to the top navigation bar */
 
 
 /* Style the links inside the navigation bar */
