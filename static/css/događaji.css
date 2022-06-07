@@ -33,19 +33,6 @@ table{
  border-radius: 5%;
 }
 
-.mon{
-  color:blue;
-}
-.sat{
-  color: rgb(130, 20, 220);
-}
-.sun{
-  color: rgb(233, 28, 124);
-}
-th1{
-  color: crimson;
-  margin: 100px;
-}
 
 .footer {
   padding: 20px; /* Some padding */
