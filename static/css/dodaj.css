@@ -1,3 +1,15 @@
+.header {
+  padding: 80px; /* some padding */
+  text-align: center; /* center the text */
+  background: #1a7bbc; /* blue background */
+  color: white; /* white text color */
+}
+
+/* Increase the font size of the <h1> element */
+.header h1 {
+  font-size: 40px;
+}
+
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
     width: 100%; /* Full width */
@@ -12,7 +24,7 @@ input[type=text], select, textarea {
   
   /* Style the submit button with a specific background color etc */
   input[type=submit] {
-    background-color: #04AA6D;
+    background-color: #1a7bbc;
     color: white;
     padding: 12px 20px;
     border: none;
