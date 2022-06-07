@@ -5,6 +5,16 @@
   color: white;
 }
 
+.btn-nav{
+  
+  background-color: #1aa4bc;
+  color: white;
+  display: inline;
+  padding: 12px;
+  text-decoration: none;
+
+}
+
 body, html {
     height: 100%;
 }
@@ -49,7 +59,7 @@ body, html {
   /* Style the top navigation bar */
 .navbar {
     width: 100%; /* Full-width */
-    background-color: #1aa4bc; /* Blue background */
+    background-color: white; /* Blue background */
     overflow: auto; /* Overflow due to float */
   }
   
