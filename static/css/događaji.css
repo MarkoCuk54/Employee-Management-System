@@ -1,4 +1,51 @@
+.header {
+  width: 200 px;
+  background-color: white;
+   /* some padding */
+}
 
+/* Increase the font size of the <h1> element */
+.header h1 {
+  font-size: 40px;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  text-align: center;}
+.grid-item{
+  padding: 10px;
+}
+.grid-item2{
+  padding: 3%;
+  text-align: center;
+  margin: 15px;
+}
+body{
+ text-align: center;
+ background-color: rgb(249, 240, 255);
+}
+table{
+ margin: 10px;
+ padding: 10px;
+ width: 100%;
+ background-color: rgb(255, 255, 255);
+ border-radius: 5%;
+}
+
+.mon{
+  color:blue;
+}
+.sat{
+  color: rgb(130, 20, 220);
+}
+.sun{
+  color: rgb(233, 28, 124);
+}
+th1{
+  color: crimson;
+  margin: 100px;
+}
 
 .footer {
   padding: 20px; /* Some padding */
@@ -9,14 +56,14 @@
 
 .icon-bar {
     width: 100%; /* Full-width */
-    background-color: #2196F3; /* Dark-grey background */
+    background-color: #555; /* Dark-grey background */
     overflow: auto; /* Overflow due to float */
   }
   
   .icon-bar a {
     float: left; /* Float links side by side */
     text-align: center; /* Center-align text */
-    width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
+    width: 12%; /* Equal width (5 icons with 20% width each = 100%) */
     padding: 12px 0; /* Some top and bottom padding */
     transition: all 0.3s ease; /* Add transition for hover effects */
     color: white; /* White text color */
@@ -28,54 +75,15 @@
   }
   
   .active {
-    background-color: #04AA6D; /* Add an active/current color */
+    background-color: #1aa4bc; /* Add an active/current color */
   }
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+  .body {
+      padding: 60px;
+      text-align: center;
+      background: white;
+      color: #1aa4bc;
+      font-size: 30px;
+    }
 
-  .footer {
-    padding: 20px; /* Some padding */
-    text-align: center; /* Center text*/
-    background: #ddd; /* Grey background */
-  }
-    
-  
-  .icon-bar {
-      width: 100%; /* Full-width */
-      background-color: #555; /* Dark-grey background */
-      overflow: auto; /* Overflow due to float */
-    }
-    
-    .icon-bar a {
-      float: left; /* Float links side by side */
-      text-align: center; /* Center-align text */
-      width: 12%; /* Equal width (5 icons with 20% width each = 100%) */
-      padding: 12px 0; /* Some top and bottom padding */
-      transition: all 0.3s ease; /* Add transition for hover effects */
-      color: white; /* White text color */
-      font-size: 36px; /* Increased font size */
-    }
-    
-    .icon-bar a:hover {
-      background-color: #000; /* Add a hover color */
-    }
-    
-    .active {
-      background-color: #1aa4bc; /* Add an active/current color */
-    }
-    
     
