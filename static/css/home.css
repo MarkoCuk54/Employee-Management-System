@@ -7,18 +7,20 @@
 
   /* Style the top navigation bar */
 .navbar {
-    overflow: hidden; /* Hide overflow */
-    background-color: #1aa4bc; /* Light background color */
+  width: 100%; /* Full-width */
+  background-color: #1aa4bc; /* Dark-grey background */
+  overflow: auto; /* Overflow due to float */
   }
   
   /* Style the navigation bar links */
   .navbar a {
-    float: left; /* Make sure that the links stay side-by-side */
-    display: block; /* Change the display to block, for responsive reasons (see below) */
+    float: left; /* Float links side by side */
+    text-align: center; /* Center-align text */
+    width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
+    padding: 12px 0; /* Some top and bottom padding */
+    transition: all 0.3s ease; /* Add transition for hover effects */
     color: white; /* White text color */
-    text-align: center; /* Center the text */
-    padding: 14px 20px; /* Add some padding */
-    text-decoration: none; /* Remove underline */
+    font-size: 36px; /* Increased font size */
   }
   
   /* Right-aligned link */
@@ -28,8 +30,7 @@
   
   /* Change color on hover/mouse-over */
   .navbar a:hover {
-    background-color: #1aa4bc; /* Blue background color */
-    color: white; /* White text color */
+    background-color: #1aa4bc; /* Add a hover color */
   }
 
   /* Ensure proper sizing */
