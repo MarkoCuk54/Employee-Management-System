@@ -1,160 +1,201 @@
-.header {
-  font-size: 14px;
-  text-align: left;
-  background-color: #1aa4bc;
-  color: white;
-}
-
-.btn-nav{
-  
-  background-color: #1aa4bc;
-  color: white;
-  display: inline-block;
-  padding: 12px;
-  text-decoration: none;
-  border-color: #1aa4bc;
-
-}
-
-body, html {
+body,
+html {
     height: 100%;
+    font-family: "Lato", sans-serif;
+    background-color: #06283d;
+    color: antiquewhite;
 }
+
+.btn-nav {
+    background-color: #1aa4bc;
+    color: white;
+    display: inline-block;
+    padding: 12px;
+    text-decoration: none;
+    border-color: #1aa4bc;
+}
+
 
 /* The hero image */
+
 .hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6CDo0JU2dTB1C41ww-cYt_Wu1-GNgneZo4A&usqp=CAU");
-
-  /* Set a specific height */
-  height: 50%;
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+    background-image: url("../img/dron.jpg");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
+
 
 /* Place text in the middle of the image */
+
 .hero-text {
-  text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
-  .body {
-    padding: 60px;
     text-align: center;
-    background: #1aa4bc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
-    font-size: 30px;
-  }
+}
 
-  /* Increase the font size of the <h1> element */
-  .header h1 {
+
+/* Increase the font size of the <h1> element */
+
+.header h1 {
     font-size: 40px;
-  }
+}
 
-  /* Style the top navigation bar */
+
+/* Style the top navigation bar */
+
 .navbar {
-    width: 100%; /* Full-width */
-    background-color: white; /* Blue background */
-    overflow: auto; /* Overflow due to float */
-  }
-  
-  /* Style the navigation bar links */
-  .navbar a {
-    float: left; /* Float links side by side */
-    text-align: center; /* Center-align text */
-    width: 12%; /* Equal width (5 icons with 20% width each = 100%) */
-    padding: 12px 0; /* Some top and bottom padding */
-    transition: all 0.3s ease; /* Add transition for hover effects */
-    color: white; /* White text color */
-    font-size: 36px; /* Increased font size */
-  }
-  
-  /* Right-aligned link */
-  .navbar a.right {
-    float: right; /* Float a link to the right */
-  }
-  
-  /* Change color on hover/mouse-over */
-  .navbar a:hover {
-    background-color: #000; /* Add a hover color */
-  }
+    width: 100%;
+    /* Full-width */
+    background-color: white;
+    /* Blue background */
+    overflow: auto;
+    /* Overflow due to float */
+}
 
-  /* Ensure proper sizing */
+
+/* Style the navigation bar links */
+
+.navbar a {
+    float: left;
+    /* Float links side by side */
+    text-align: center;
+    /* Center-align text */
+    width: 12%;
+    /* Equal width (5 icons with 20% width each = 100%) */
+    padding: 12px 0;
+    /* Some top and bottom padding */
+    transition: all 0.3s ease;
+    /* Add transition for hover effects */
+    color: white;
+    /* White text color */
+    font-size: 36px;
+    /* Increased font size */
+}
+
+
+/* Right-aligned link */
+
+.navbar a.right {
+    float: right;
+    /* Float a link to the right */
+}
+
+
+/* Change color on hover/mouse-over */
+
+.navbar a:hover {
+    background-color: #000;
+    /* Add a hover color */
+}
+
+
+/* Ensure proper sizing */
+
 * {
     box-sizing: border-box;
-  }
+}
 
 
-  /* Column container */
-  .row {
+/* Column container */
+
+.row {
     display: flex;
     flex-wrap: wrap;
-  }
-  
-  /* Create two unequal columns that sits next to each other */
-  /* Sidebar/left column */
-  .side {
-    flex: 30%; /* Set the width of the sidebar */
-    background-color: #f1f1f19c; /* Grey background color */
-    padding: 20px; /* Some padding */
-  }
-  
-  /* Main column */
-  .main {
-    flex: 70%; /* Set the width of the main content */
-    background-color: rgba(255, 255, 255, 0.527); /* White background color */
-    padding: 20px; /* Some padding */
-  }
-  
-  /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+}
+
+
+/* Create two unequal columns that sits next to each other */
+
+
+/* Sidebar/left column */
+
+.side {
+    flex: 30%;
+    /* Set the width of the sidebar */
+    background-color: #f1f1f19c;
+    /* Grey background color */
+    padding: 20px;
+    /* Some padding */
+}
+
+
+/* Main column */
+
+.main {
+    flex: 70%;
+    /* Set the width of the main content */
+    background-color: rgba(255, 255, 255, 0.527);
+    /* White background color */
+    padding: 20px;
+    /* Some padding */
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+
 @media screen and (max-width: 700px) {
     .row {
-      flex-direction: column;
+        flex-direction: column;
     }
-  }
-  
-  /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-  @media screen and (max-width: 400px) {
+}
+
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 400px) {
     .navbar a {
-      float: none;
-      width: 100%;
+        float: none;
+        width: 100%;
     }
-  }
+}
 
+.footer {
+    padding: 20px;
+    /* Some padding */
+    text-align: center;
+    /* Center text*/
+    background: #ddd;
+    /* Grey background */
+}
 
-  .footer {
-    padding: 20px; /* Some padding */
-    text-align: center; /* Center text*/
-    background: #ddd; /* Grey background */
-  }
-    
-  
-  .icon-bar {
-      width: 100%; /* Full-width */
-      background-color: #555; /* Dark-grey background */
-      overflow: auto; /* Overflow due to float */
-    }
-    
-    .icon-bar a {
-      float: left; /* Float links side by side */
-      text-align: center; /* Center-align text */
-      width: 12%; /* Equal width (5 icons with 20% width each = 100%) */
-      padding: 12px 0; /* Some top and bottom padding */
-      transition: all 0.3s ease; /* Add transition for hover effects */
-      color: white; /* White text color */
-      font-size: 36px; /* Increased font size */
-    }
-    
-    .icon-bar a:hover {
-      background-color: #000; /* Add a hover color */
-    }
-    
-    .active {
-      background-color: #1aa4bc; /* Add an active/current color */
-    }
+.icon-bar {
+    width: 100%;
+    /* Full-width */
+    background-color: #555;
+    /* Dark-grey background */
+    overflow: auto;
+    /* Overflow due to float */
+}
+
+.icon-bar a {
+    float: left;
+    /* Float links side by side */
+    text-align: center;
+    /* Center-align text */
+    width: 12%;
+    /* Equal width (5 icons with 20% width each = 100%) */
+    padding: 12px 0;
+    /* Some top and bottom padding */
+    transition: all 0.3s ease;
+    /* Add transition for hover effects */
+    color: white;
+    /* White text color */
+    font-size: 36px;
+    /* Increased font size */
+}
+
+.icon-bar a:hover {
+    background-color: #000;
+    /* Add a hover color */
+}
+
+.active {
+    background-color: #1aa4bc;
+    /* Add an active/current color */
+}

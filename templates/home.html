@@ -5,61 +5,65 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/home.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;700&family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../static/css/home.css" />
     <title>Home</title>
-
-
 </head>
 
 <body>
-    <div class="header">
-        <p><i class="fa fa-phone"></i> +38739701240 <i class="fa fa-envelope"></i> info@emerus.eu</p>
-    </div>
-    <img src="../static/img/emerus.jpg" alt="emerus" width="500" height="128">
-    <h1 style="text-align: center;">Hello, {{data}}</h1>
-    
+    <nav>
+        <div class="icon-bar">
+            <a class="active" href="#"><i class="fa fa-home"></i></a>
+            <a href="https://www.linkedin.com/company/emeruseu"><i class="fa fa-linkedin"></i
+        ></a>
+            <a href="https://emerus.eu/hr/podrska-kontakt/"><i class="fa fa-envelope"></i
+        ></a>
+            <a href="http://emerus.eu/hr/"><i class="fa fa-globe"></i></a>
+            <a href="https://www.facebook.com/emerus.eu"><i class="fa fa-facebook"></i
+        ></a>
+            <a href="https://twitter.com/Emerus_EU"><i class="fa fa-twitter"></i
+        ></a>
+            <a href="https://www.instagram.com/emerus.doo/?hl=en"><i class="fa fa-instagram"></i
+        ></a>
+            <h1>Pozdrav, {{data}}</h1>
+        </div>
+    </nav>
     <div class="hero-image">
         <div class="hero-text">
-          <h1>Zaposlenici</h1>
+            <img src="../static/img/emerus.jpg" alt="emerus" width="500" height="128" />
         </div>
-      </div>
+    </div>
 
-</body>
+    <br />
 
-<br>
+    <div class="navbar">
+        <form action="/svi">
+            <button class="btn-nav" id="svi">Svi zaposlenici</button>
+        </form>
+        <br />
+        <form action="/dodaj">
+            <button class="btn-nav" id="dodaj">Dodaj zaposlenika</button>
+        </form>
+        <br />
+        <form action="/događaji">
+            <button class="btn-nav" id="događaji">Događaji</button>
+        </form>
+        <br />
+        <form action="/obrasci">
+            <button class="btn-nav" id="obrasci">Obrasci</button>
+        </form>
+        <br />
+        <form action="/logout">
+            <button class="btn-nav" id="logout">Odjavi se</button>
+        </form>
+    </div>
 
-<div class="navbar">
-    <form action="/svi"> <button class="btn-nav" id="svi">Svi zaposlenici</button></form>  
-    <br>  
-    <form action="/dodaj"> <button class="btn-nav" id="dodaj">Dodaj zaposlenika</button></form>
-    <br>
-    <form action="/događaji"> <button class="btn-nav" id="događaji">Događaji</button></form>
-    <br>
-    <form action="/obrasci"> <button class="btn-nav" id="obrasci">Obrasci</button></form>
-    <br>
-    <form action="/logout"> <button class="btn-nav" id="logout">Odjavi se</button></form>
-</div>
-
-
-<div class="footer">
-    <h2>Emerus, 2022.</h2>
-</div>
-
-<!-- Add icon library -->
-
-<div class="icon-bar">
-    <a class="active" href="#"><i class="fa fa-home"></i></a>
-    <a href="https://www.linkedin.com/company/emeruseu"><i class="fa fa-linkedin"></i></a>
-    <a href="https://emerus.eu/hr/podrska-kontakt/"><i class="fa fa-envelope"></i></a>
-    <a href="http://emerus.eu/hr/"><i class="fa fa-globe"></i></a>
-    <a href="https://www.facebook.com/emerus.eu"><i class="fa fa-facebook"></i></a>
-    <a href="https://twitter.com/Emerus_EU"><i class="fa fa-twitter"></i></a>
-    <a href="https://www.instagram.com/emerus.doo/?hl=en"><i class="fa fa-instagram"></i></a>
-</div>
-
+    <div class="footer">
+        <h2>Emerus, 2022.</h2>
+    </div>
 </body>
 
 </html>
