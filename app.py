@@ -40,8 +40,9 @@ def svi():
     cur = conn.cursor()
     cur.execute("SELECT * FROM radnici")
     data = cur.fetchall()
-    print(data)
     return render_template("svi.html", data = data)
+
+
 
 @app.route("/dodaj")
 def dodaj():

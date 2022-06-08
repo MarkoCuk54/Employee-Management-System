@@ -3,6 +3,11 @@
     background-color: white;
      /* some padding */
   }
+
+  label {
+  
+  color: #000;
+}
   
   /* Increase the font size of the <h1> element */
   .header h1 {

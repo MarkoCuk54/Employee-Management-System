@@ -74,3 +74,8 @@ input[type=text], select, textarea {
     .active {
       background-color: #1aa4bc; /* Add an active/current color */
     }
+
+    label {
+  
+      color: #000;
+    }

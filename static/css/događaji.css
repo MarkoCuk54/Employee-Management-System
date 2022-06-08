@@ -340,12 +340,3 @@ h3,h4,h5 {
      padding-right: 0;
   }
 }
-
-.footer {
-  padding: 20px;
-  /* Some padding */
-  text-align: center;
-  /* Center text*/
-  background: gray;
-  /* Grey background */
-}
