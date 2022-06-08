@@ -42,6 +42,9 @@ def svi():
     data = cur.fetchall()
     return render_template("svi.html", data = data)
 
+@app.route("/editUser")
+def editUser():
+    return render_template("editUser.html")
 
 
 @app.route("/dodaj")
@@ -55,10 +58,6 @@ def događaji():
 @app.route("/obrasci")
 def obrasci():
     return render_template("obrasci.html")
-
-@app.route("/editUser")
-def editUser():
-    return render_template("editUser.html")
 
 # auto restart server on change
 app.run(debug=True)

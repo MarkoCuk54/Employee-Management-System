@@ -301,7 +301,7 @@ html {
   
   .fl-table {
     border-radius: 15px;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: normal;
     border: none;
     border-collapse: collapse;
@@ -309,6 +309,7 @@ html {
     max-width: 100%;
     white-space: nowrap;
     background-color: white;
+    color: #000;
   }
   
   .fl-table td,
@@ -421,4 +422,3 @@ html {
     margin-bottom: 27px;
     margin-left: 72px;
   }
-  
