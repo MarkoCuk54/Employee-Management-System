@@ -53,7 +53,10 @@ html {
     font-size: 40px;
 }
 
-
+.header h2 {
+    font-size: 40px;
+    color: #1363df;
+}
 /* Style the top navigation bar */
 
 
