@@ -52,12 +52,12 @@
 
 <form class="delete-form" action="/deleteUser" method="post">
     <input style="margin-right: 10px" autocomplete="off" type="number" min=1 max=999 name="id" placeholder="ID">
-    <input id="button-delete" type="submit" value="Izbrisati">
+    <input id="button-delete" type="submit" value="Izbrisati" style="background-color: #1aa4bc;border-color: #1aa4bc;font-size: medium;color: white">
 </form>
-
+</br>
 <form class="edit-form" action="/editUser.html" method="post">
     <input style="margin-right: 10px" autocomplete="off" type="number" min=1 max=999 name="idEdit" placeholder="ID">
-    <input id="button-delete" type="submit" value="Uredi zaposlenika">
+    <input id="button-delete" type="submit" value="Uredi zaposlenika" style="background-color: #1aa4bc;border-color: #1aa4bc; font-size: medium;color: white">
 </form>
 
 <div class="table-wrapper">
@@ -99,12 +99,6 @@
 
         <div class="footer">
             <h2>Emerus, 2022.</h2>
-
-            <script>
-                var dt = new Date();
-                document.getElementById('date-time').innerHTML=dt;
-                </script>
-                
         </div>
     </body>
 
