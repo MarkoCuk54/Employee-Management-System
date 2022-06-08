@@ -1,25 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/home.css">
-    <link rel="stylesheet" href="../static/css/svi.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;700&family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="../static/css/home.css" />
+        <link rel="stylesheet" href="../static/css/svi.css" />
+        <title>svi zaposlenici</title>
+    </head>
+    
+    <body>
+        <nav>
+            <div class="newNav">
+                <form action="/logout">
+                    <button id="logout">Odjavi se</button>
+                </form>
+                <br />
+                <form action="/obrasci">
+                    <button id="obrasci">Obrasci</button>
+                </form>
+                <br />
+                
+                <form action="/događaji">
+                    <button id="događaji">Događaji</button>
+                </form>
+                <br />
+                <form action="/dodaj">
+                    <button id="dodaj">Dodaj zaposlenika</button>
+                </form>
+                <br />
+                <form action="/svi">
+                    <button id="svi">Svi zaposlenici</button>
+                </form>
+                </div>
+                <h1>Pozdrav, {{data}}</h1>
+            </div>
+        </nav>
 
-    <title>Svi zaposlenici</title>
-</head>
-
-<body>
-    <img src="../static/img/emerus.jpg" alt="emerus" width="500" height="128">
-    <h2 style="text-align: left;background-color:#1aa4bc; color: white; text-indent: 30px">Popis svih zaposlenika</h2>
-</body>
-
-<div class="topnav">
-    <div class="search-container">
-
+        <div class="hero-image">
+            <div class="hero-text">
+                <img src="../static/img/emerus.jpg" alt="emerus" width="500" height="128" />
+            </div>
+        </div>
 
         <div class="radnik">
             <p>{{data[0][1]}}</p>
@@ -29,24 +56,14 @@
             <p>{{data[0][5]}}</p>
             <p>0{{data[0][6]}}</p>
         </div>
-    </div>
+        
+        <div class="footer">
+            <h2>Emerus, 2022.</h2>
+        </div>
+    </body>
+
+        
+
     
-  <div class="footer">
-      <h2>Emerus, 2022.</h2>
-  </div>
-  
-  <!-- Add icon library -->
-  
-  <div class="icon-bar">
-    <a class="active" href="#"><i class="fa fa-home"></i></a>
-    <a href="https://www.linkedin.com/company/emeruseu"><i class="fa fa-linkedin"></i></a>
-    <a href="https://emerus.eu/hr/podrska-kontakt/"><i class="fa fa-envelope"></i></a>
-    <a href="http://emerus.eu/hr/"><i class="fa fa-globe"></i></a>
-    <a href="https://www.facebook.com/emerus.eu"><i class="fa fa-facebook"></i></a>
-    <a href="https://twitter.com/Emerus_EU"><i class="fa fa-twitter"></i></a>
-    <a href="https://www.instagram.com/emerus.doo/?hl=en"><i class="fa fa-instagram"></i></a>
-  </div>
-  
-  </body>
   
   </html>
