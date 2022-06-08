@@ -15,6 +15,13 @@ html {
     border-color: #1aa4bc;
 }
 
+.newNav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-left: 1200px;
+}
+
 
 /* The hero image */
 
@@ -49,19 +56,10 @@ html {
 
 /* Style the top navigation bar */
 
-.navbar {
-    width: 100%;
-    /* Full-width */
-    background-color: white;
-    /* Blue background */
-    overflow: auto;
-    /* Overflow due to float */
-}
-
 
 /* Style the navigation bar links */
 
-.navbar a {
+.navbar form {
     float: left;
     /* Float links side by side */
     text-align: center;
@@ -81,7 +79,7 @@ html {
 
 /* Right-aligned link */
 
-.navbar a.right {
+.navbar form.right {
     float: right;
     /* Float a link to the right */
 }
@@ -89,20 +87,9 @@ html {
 
 /* Change color on hover/mouse-over */
 
-.navbar a:hover {
-    background-color: #000;
-    /* Add a hover color */
+.navbar form:hover {
+    background-color: #1363df;
 }
-
-
-/* Ensure proper sizing */
-
-* {
-    box-sizing: border-box;
-}
-
-
-/* Column container */
 
 .row {
     display: flex;
@@ -142,16 +129,6 @@ html {
 @media screen and (max-width: 700px) {
     .row {
         flex-direction: column;
-    }
-}
-
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-
-@media screen and (max-width: 400px) {
-    .navbar a {
-        float: none;
-        width: 100%;
     }
 }
 
