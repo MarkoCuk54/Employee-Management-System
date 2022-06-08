@@ -48,7 +48,8 @@
             </div>
         </div>
 
-    <hr>
+</br>
+
     <div class="table-wrapper">
 
     <table class="fl-table">
@@ -61,11 +62,48 @@
                 <th>Datum zaposlenja</th>
                 <th>Odjel</th>
             </tr>
+
+
+            <tr>
+                <td>row[1] </td>
+                <td> row[2] </td>
+                <td>row[3] </td>
+                <td>row[4] </td>
+                <td>row[5] </td>
+                <td> row[6] </td>
+            </tr>
         </thead>
     </table>
+
+<hr>
 
         <div class="footer">
             <h2>Emerus, 2022.</h2>
         </div>
     </body>
+
+    <script language="javascript">
+        setTimeout(function() {
+            window.location.reload(1);
+        }, 60000);
+    </script>
+
+    <script>
+        const spans = document.querySelectorAll('.word span');
+
+        spans.forEach((span, idx) => {
+            span.addEventListener('click', (e) => {
+                e.target.classList.add('active');
+            });
+            span.addEventListener('animationend', (e) => {
+                e.target.classList.remove('active');
+            });
+
+            // Initial animation
+            setTimeout(() => {
+                span.classList.add('active');
+            }, 750 * (idx + 1))
+        });
+    </script>
+
   </html>
