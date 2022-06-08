@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/editUser.css" />
+    <title>Edit User</title>
+</head>
+
+<body>
+    <h1>Sada možete uređivati ​​zaposlenika {{data[1]}} {{data[2]}}.</h1>
+
+    <div class="info">
+        <h4>ID:</h4>
+        <p>{{data[0]}}</p>
+        <hr />
+        <h4>JMBG:</h4>
+        <p>{{data[6]}}</p>
+        <hr />
+        <h4>Odjel:</h4>
+        <form style="text-align: left; display: contents" action="/changeOdjel" method="post">
+            <p style="display: contents">Trenutni : {{data[4]}}</p>
+            <label style="margin-left: 40px" for="satnica">Promjeni Odjel : </label>
+
+            <input type="text" placeholder="Novi Odjel" name="odjel" id="satnica" />
+            <input type="submit" value="Promjeni" id="editButton" />
+        </form>
+        <hr />
+        <h4>Satnica:</h4>
+        <form style="text-align: left; display: contents" action="/changeSatnica" method="post">
+            <p style="display: contents">Trenutna : {{data[3]}}KM</p>
+            <label style="margin-left: 40px" for="satnica">Promjeni Satnicu :
+        </label>
+
+            <input type="text" placeholder="Nova satnica" name="satnica" id="satnica" />
+            <input type="submit" value="Promjeni" id="editButton" />
+        </form>
+        <hr />
+        <h4>Opis:</h4>
+        <p>{{data[5]}}</p>
+        <hr />
+    </div>
+    <form class="form-nazad" action="/sviRadnici">
+        <button class="button-nazad">Nazad</button>
+    </form>
+</body>
+
+</html>

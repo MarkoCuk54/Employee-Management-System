@@ -50,30 +50,50 @@
 
 </br>
 
-    <div class="table-wrapper">
+<form class="delete-form" action="/deleteUser" method="post">
+    <input style="margin-right: 10px" autocomplete="off" type="number" min=1 max=999 name="id" placeholder="ID">
+    <input id="button-delete" type="submit" value="Izbrisati">
+</form>
+
+<form class="edit-form" action="/editUser" method="post">
+    <input style="margin-right: 10px" autocomplete="off" type="number" min=1 max=999 name="idEdit" placeholder="ID">
+    <input id="button-delete" type="submit" value="Uredi zaposlenika">
+</form>
+
+<div class="table-wrapper">
 
     <table class="fl-table">
         <thead style="text-align: center">
             <tr>
                 <th>ID</th>
-                <th>Ime i prezime</th>
-                <th>Broj mobitela</th>
-                <th>Email</th>
-                <th>Datum zaposlenja</th>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Satnica</th>
                 <th>Odjel</th>
-            </tr>
+                <th>Opis</th>
 
 
-            <tr>
-                <td>row[1] </td>
-                <td> row[2] </td>
-                <td>row[3] </td>
-                <td>row[4] </td>
-                <td>row[5] </td>
-                <td> row[6] </td>
             </tr>
         </thead>
+        <div>
+            {% for row in data %}
+            <div>
+                <tbody>
+                    <tr>
+                        <td class="idSearch">{{row[0]}}</td>
+                        <td>{{ row[1] }}</td>
+                        <td>{{ row[2] }}</td>
+                        <td>{{ row[3] }}</td>
+                        <td>{{ row[4] }}</td>
+                        <td>{{ row[5] }}</td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+
+                <tbody></tbody>
     </table>
+
+    </div>
 
 <hr>
 
@@ -105,5 +125,5 @@
             }, 750 * (idx + 1))
         });
     </script>
-
   </html>
+

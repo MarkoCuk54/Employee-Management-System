@@ -56,5 +56,9 @@ def događaji():
 def obrasci():
     return render_template("obrasci.html")
 
+@app.route("/editUser")
+def editUser():
+    return render_template("editUser.html")
+
 # auto restart server on change
 app.run(debug=True)

@@ -1,0 +1,84 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Varela Round", sans-serif;
+    background-image: url("./whitebg.jpg");
+}
+
+h1 {
+    color: #000;
+    text-align: center;
+}
+
+.form-nazad {
+    position: absolute;
+    bottom: 10px;
+    width: 50%;
+    margin-left: 55%;
+}
+
+.button-nazad {
+    background-color: #5ccbcb;
+    color: black;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 0 20px;
+}
+
+.button-nazad:hover {
+    cursor: pointer;
+    background-color: #046c94;
+    color: #fff;
+}
+
+.info {
+    margin: 40px 40px 0px 40px;
+}
+
+.color-font {
+    color: #f32424;
+}
+
+.form-edit {
+    position: absolute;
+    bottom: 10px;
+    width: 50%;
+    margin-left: 35%;
+}
+
+.form-edit button {
+    background-color: #2155cd;
+    color: black;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 0 20px;
+}
+
+.form-edit button:hover {
+    cursor: pointer;
+    background-color: #046c94;
+    color: #fff;
+}
+
+#satnica {
+    width: 20%;
+    text-decoration: none;
+    border: solid #5ccbcb 1px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+#editButton {
+    background-color: #5ccbcb;
+    color: black;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+#editButton:hover {
+    cursor: pointer;
+    background-color: #046c94;
+    color: #fff;
+}
