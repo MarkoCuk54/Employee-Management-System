@@ -72,6 +72,5 @@ def unesi():
         status =  request.form['status'] 
         filename = request.form['filename']
         print(firstname, lastname,birthday,adress,email,phone,department,position,startedDate,salary,status,filename)
-        return("hEllo")
 
 app.run(debug=True)
