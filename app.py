@@ -1,3 +1,4 @@
+from turtle import position
 from flask import Flask, request
 from flask import render_template
 from db_data import conn
@@ -54,4 +55,24 @@ def događaji():
 def obrasci():
     return render_template("obrasci.html")
 # auto restart server on change
+
+@app.route("/unesi", methods=["POST"])
+def unesi():
+        firstname =  request.form['firstname'] 
+        lastname = request.form['lastname']
+        birthday =  request.form['birthday'] 
+        adress =  request.form['adress'] 
+        email = request.form['email']
+        phone =  request.form['phone'] 
+        department = request.form['department']
+        position = request.form['position']
+        startedDate =  request.form['startedDate'] 
+        salary = request.form['salary']
+        status =  request.form['status'] 
+        filename = request.form['filename']
+        print(firstname, lastname,birthday,adress,email,phone,department,position,startedDate,salary,status,filename)
+        return("hEllo")
+   
+        
+
 app.run(debug=True)
