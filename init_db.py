@@ -8,7 +8,7 @@ cur.execute('DROP TABLE IF EXISTS admin;')
 cur.execute('CREATE TABLE admin (id serial PRIMARY KEY, username varchar (20) NOT NULL, password varchar (50) NOT NULL)')
 
 cur.execute('DROP TABLE IF EXISTS radnici;')
-cur.execute('CREATE TABLE radnici (id PRIMARY KEY, firstname varchar (20) NOT NULL, lastname varchar (50) NOT NULL, birthday date, adress varchar (50) NOT NULL, adress varchar (50) NOT NULL, phone BIGINT NOT NULL, department varchar (20) NOT NULL, position varchar (20) NOT NULL, startedDate date, salary decimal(18,0), status varchar (20) NOT NULL, filename image)')
+cur.execute('CREATE TABLE radnici (id primary key, firstname varchar (20) not null, lastname varchar (50) not null, birthday date, adress varchar (50) not null, phone bigint not null, department varchar (20) not null, position varchar (20) not null, startedDate date, salary decimal(18,0), status varchar (20) NOT NULL, filename image)')
 
 # Insert data into the table
 
@@ -19,6 +19,9 @@ cur.execute('INSERT INTO admin (username, password)'
              'emerus2705')
             )
 
+cur.execute('INSERT INTO radnici (firstname, lastname, birthday, adress, phone, department, position, startedDate, salary, status, filename)' 
+            'VALUES (%s, %s)'
+            )
 
 
 
