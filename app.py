@@ -42,11 +42,6 @@ def svi():
     data = cur.fetchall()
     return render_template("svi.html", data = data)
 
-@app.route("/editUser")
-def editUser():
-    return render_template("editUser.html")
-
-
 @app.route("/dodaj")
 def dodaj():
     return render_template("dodaj.html")
