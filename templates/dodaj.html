@@ -63,13 +63,16 @@
   
       <label for="adress">Adresa</label>
       <input type="text" id="adress" name="adress" placeholder="Adresa">
-  
-      <label for="subject">Zanimanje</label>
-      <input type="text" id="profession" name="profession" placeholder="Zanimanje">
 
-      <label for="phone">Broj mobitela</label>
-      <input type="text" id="text" name="number" placeholder="Broj mobitela">
-      <br>
+      <label for="gender">Spol: </label>
+      <input type="radio" name="gender" value="male"> Muški
+      <input type="radio" name="gender" value="female"> Ženski
+
+      </br>
+
+      <label for="birthday">Datum rođenja: </label>
+      <input type="date" id="birthday" name="birthday">
+      <input type="submit">
 
       <label for="odjel">Odjel</label>
       <select placeholder="Odjel" name="Odjel" id="subject_input" required>
@@ -86,9 +89,6 @@
         <option value="Korekcija">Korekcija</option>
         <option value="Kontrola">Kontrola</option>
       </select>
-
-      <label for="email">Email</label>
-      <input type="text" id="email" name="email" placeholder="Email">
   
       <input type="submit" value="Unesi">
   
