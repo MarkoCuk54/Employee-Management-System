@@ -75,5 +75,6 @@ label {
   padding: 20px; /* Some padding */
   text-align: center; /* Center text*/
   background-color: #555;
+  align-content: center;
 }
   
