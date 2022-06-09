@@ -55,31 +55,71 @@
 <div class="container">
     <form action="action_page.php">
   
-      <label for="fname">Ime</label>
-      <input type="text" id="fname" name="firstname"><br><br>
-  
-      <label for="lname">Prezime</label>
-      <input type="text" id="lname" name="lastname"><br><br>
-
+        <div class="row">
+        <div class="col-25">
+          <label for="fname">Ime</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname" name="firstname">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Prezime</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="lastname">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
       <label for="birthday">Datum rođenja </label>
+      </div>
+        <div class="col-75">
       <input type="date" id="birthday" name="birthday"><br><br>
-
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
       <label for="gender">Spol </label>
+      </div>
+        <div class="col-75">
       <input type="radio" name="gender" value="male"> Muški
+      </div>
+        <div class="col-75">
       <input type="radio" name="gender" value="female"> Ženski<br><br>
-  
+    </div>
+</div>
+      <div class="row">
+        <div class="col-25">
       <label for="adress">Adresa</label>
+      </div>
+        <div class="col-75">
       <input type="text" id="adress" name="adress"><br><br>
-
-
+    </div>
+</div>
+      <div class="row">
+        <div class="col-25">
       <label for="email">Email</label>
+      </div>
+        <div class="col-75">
       <input type="email" id="email" name="email"><br><br>
-
+    </div>
+</div>
+      <div class="row">
+        <div class="col-25">
       <label for="phone">Broj mobitela</label>
+      </div>
+        <div class="col-75">
       <input type="tel" id="phone" name="phone" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required><br>
       <small>Format: 063-000-000</small><br><br>
-
+    </div>
+</div>
+      <div class="row">
+        <div class="col-25">
       <label for="odjel">Odjel</label>
+      </div>
+        <div class="col-75">
       <select placeholder="Odjel" name="Odjel" id="subject_input" required>
         <option disabled hidden selected>Odaberite odjel</option>
         <option value="Uprava">Uprava</option>
@@ -94,9 +134,52 @@
         <option value="Korekcija">Korekcija</option>
         <option value="Kontrola">Kontrola</option>
       </select><br><br>
-
+    </div>
+</div>
+      <div class="row">
+        <div class="col-25">
+      <label for="position">Pozicija</label>
+      </div>
+        <div class="col-75">
+      <input type="text" id="position" name="position"><br><br>
+    </div>
+</div>
+      <div class="row">
+        <div class="col-25">
       <label for="startedDate">Datum zaposlenja </label>
+      </div>
+        <div class="col-75">
       <input type="date" id="startedDate" name="startedDate"><br><br>
+    </div>
+</div>
+      <div class="row">
+        <div class="col-25">
+      <label for="salary">Osnovna plaća</label>
+      </div>
+        <div class="col-75">
+      <input type="text" id="salary" name="salary"><br><br>
+    </div>
+</div>
+      <div class="row">
+        <div class="col-25">
+      <label for="status">Status</label>
+      </div>
+        <div class="col-75">
+      <input type="text" id="status" name="status"><br><br>
+    </div>
+</div>
+      <div class="row">
+        <div class="col-25">
+      <label for="image">Fotografija zaposlenika</label>
+      </div>
+        <div class="col-75">
+      <input type="file" id="myFile" name="filename">
+      <input type="submit"><br><br>
+    </div>
+</div>
+      <div class="row">
+        <div class="col-25">
+      <input type="submit" value="unesi">
       
   
     </form>

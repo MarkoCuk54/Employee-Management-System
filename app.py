@@ -54,24 +54,5 @@ def događaji():
 def obrasci():
     return render_template("obrasci.html")
 
-@app.route('/editUser', methods=["GET", "POST"])
-def editUser():
-        editUser.id = request.form["idEdit"]
-        if(id != ""):
-            try:
-                cursor.execute("SELECT * FROM svi where  id = " + str(editUser.id))
-                result = cursor.fetchall()
-                return render_template('editUser.html', data=result[0])
-            except:
-                cursor.execute("ROLLBACK")
-                con.commit()
-                message = "ID ne postoji u Bazi"
-                return render_template('error.html', message=message)
-        else:
-            cursor.execute("ROLLBACK")
-            con.commit()
-            message = "Id polje ne smije biti prazno"
-            return render_template('error.html', message=message)
-
 # auto restart server on change
 app.run(debug=True)
