@@ -53,6 +53,5 @@ def događaji():
 @app.route("/obrasci")
 def obrasci():
     return render_template("obrasci.html")
-
 # auto restart server on change
 app.run(debug=True)
