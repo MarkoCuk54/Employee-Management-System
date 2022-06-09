@@ -19,11 +19,6 @@ cur.execute('INSERT INTO admin (username, password)'
              'emerus2705')
             )
 
-
-
-
-
-
 conn.commit()
 cur.close()
 conn.close()
