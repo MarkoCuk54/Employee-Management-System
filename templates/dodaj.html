@@ -56,23 +56,28 @@
     <form action="action_page.php">
   
       <label for="fname">Ime</label>
-      <input type="text" id="fname" name="firstname" placeholder="Ime">
+      <input type="text" id="fname" name="firstname"><br><br>
   
       <label for="lname">Prezime</label>
-      <input type="text" id="lname" name="lastname" placeholder="Prezime">
+      <input type="text" id="lname" name="lastname"><br><br>
+
+      <label for="birthday">Datum rođenja </label>
+      <input type="date" id="birthday" name="birthday"><br><br>
+
+      <label for="gender">Spol </label>
+      <input type="radio" name="gender" value="male"> Muški
+      <input type="radio" name="gender" value="female"> Ženski<br><br>
   
       <label for="adress">Adresa</label>
-      <input type="text" id="adress" name="adress" placeholder="Adresa">
+      <input type="text" id="adress" name="adress"><br><br>
 
-      <label for="gender">Spol: </label>
-      <input type="radio" name="gender" value="male"> Muški
-      <input type="radio" name="gender" value="female"> Ženski
 
-      </br>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email"><br><br>
 
-      <label for="birthday">Datum rođenja: </label>
-      <input type="date" id="birthday" name="birthday">
-      <input type="submit">
+      <label for="phone">Broj mobitela</label>
+      <input type="tel" id="phone" name="phone" placeholder="123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" required><br>
+      <small>Format: 063-000-000</small><br><br>
 
       <label for="odjel">Odjel</label>
       <select placeholder="Odjel" name="Odjel" id="subject_input" required>
@@ -88,9 +93,11 @@
         <option value="Maloprodaja">Maloprodaja</option>
         <option value="Korekcija">Korekcija</option>
         <option value="Kontrola">Kontrola</option>
-      </select>
-  
-      <input type="submit" value="Unesi">
+      </select><br><br>
+
+      <label for="startedDate">Datum zaposlenja </label>
+      <input type="date" id="startedDate" name="startedDate"><br><br>
+      
   
     </form>
   </div>
