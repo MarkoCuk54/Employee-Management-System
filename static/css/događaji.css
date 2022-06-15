@@ -1,0 +1,132 @@
+body,
+html {
+    height: 100%;
+    font-family: "Lato", sans-serif;
+    background-color: #323232;
+    color: antiquewhite;
+}
+
+.btn-nav {
+    background-color: #1aa4bc;
+    color: white;
+    display: inline-block;
+    padding: 12px;
+    text-decoration: none;
+    border-color: #1aa4bc;
+}
+
+.newNav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-left: 1200px;
+}
+
+
+/* The hero image */
+
+.hero-image {
+    background-image: url("../img/dron.jpg");
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+/* Place text in the middle of the image */
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+
+/* Increase the font size of the <h1> element */
+
+.header h1 {
+    font-size: 40px;
+}
+
+/* Style the top navigation bar */
+
+
+/* Style the navigation bar links */
+
+.navbar form {
+    float: left;
+    /* Float links side by side */
+    text-align: center;
+    /* Center-align text */
+    width: 12%;
+    /* Equal width (5 icons with 20% width each = 100%) */
+    padding: 12px 0;
+    /* Some top and bottom padding */
+    transition: all 0.3s ease;
+    /* Add transition for hover effects */
+    color: white;
+    /* White text color */
+    font-size: 36px;
+    /* Increased font size */
+}
+
+
+/* Right-aligned link */
+
+.navbar form.right {
+    float: right;
+    /* Float a link to the right */
+}
+
+
+/* Change color on hover/mouse-over */
+
+.navbar form:hover {
+    background-color: #1363df;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/* Create two unequal columns that sits next to each other */
+
+
+/* Sidebar/left column */
+
+.side {
+    flex: 30%;
+    /* Set the width of the sidebar */
+    background-color: #f1f1f19c;
+    /* Grey background color */
+    padding: 20px;
+    /* Some padding */
+}
+
+
+/* Main column */
+
+.main {
+    flex: 70%;
+    /* Set the width of the main content */
+    background-color: rgba(255, 255, 255, 0.527);
+    /* White background color */
+    padding: 20px;
+    /* Some padding */
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+}

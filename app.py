@@ -56,6 +56,10 @@ def obrasci():
     return render_template("obrasci.html")
 # auto restart server on change
 
+@app.route("/editUser")
+def editUser():
+    return render_template("editUser.html")
+
 
 @app.route("/unesi", methods=["POST"])
 def unesi():
@@ -67,10 +71,7 @@ def unesi():
         phone =  request.form['phone'] 
         department = request.form['department']
         position = request.form['position']
-        startedDate =  request.form['startedDate'] 
-        salary = request.form['salary']
-        status =  request.form['status'] 
         filename = request.form['filename']
-        print(firstname, lastname,birthday,adress,email,phone,department,position,startedDate,salary,status,filename)
+        print(firstname, lastname,birthday,adress,email,phone,department,position,filename)
 
 app.run(debug=True)
