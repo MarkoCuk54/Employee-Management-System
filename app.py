@@ -18,7 +18,7 @@ def loginSuccs():
         bolean = cur.execute("SELECT * FROM admin where id = " + username)
         bolean = cur.fetchall()
         print(bolean)
-        if(bolean != [] and password == bolean[0][2]):
+        if(bolean != [] and password == bolean[0][1]):
             cur.close()
             return render_template('home.html', data = bolean)
         else:
@@ -31,7 +31,6 @@ def loginSuccs():
         conn.commit()
         message = "Nemate pristup ovoj aplikaciji"
         return render_template("login.html",data =  message)
-
 
 @app.route("/logout")
 def logout():
@@ -46,15 +45,24 @@ def svi():
 
 @app.route("/dodaj")
 def dodaj():
-    return render_template("dodaj.html")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM radnici")
+    data = cur.fetchall()
+    return render_template("dodaj.html", data = data)
 
 @app.route("/događaji")
 def događaji():
-    return render_template("događaji.html")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM radnici")
+    data = cur.fetchall()
+    return render_template("događaji.html", data = data)
 
 @app.route("/obrasci")
 def obrasci():
-    return render_template("obrasci.html")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM radnici")
+    data = cur.fetchall()
+    return render_template("obrasci.html", data = data)
 # auto restart server on change
 
 @app.route("/editUser")
