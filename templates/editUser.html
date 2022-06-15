@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="../static/home.css" />
     <link rel="stylesheet" href="../static/editUser.css" />
     <title>Edit User</title>
 </head>
@@ -21,21 +21,18 @@
         <form style="text-align: left; display: contents" action="/changeOdjel" method="post">
             <p style="display: contents">Trenutni : {{data[4]}}</p>
             <label style="margin-left: 40px" for="plaća">Promjeni Odjel : </label>
-
             <input type="text" placeholder="Novi Odjel" name="odjel" id="plaća" />
             <input type="submit" value="Promjeni" id="editButton" />
         </form>
         <hr />
-        <h4>Osnovna plaća:</h4>
-        <form style="text-align: left; display: contents" action="/changePlaća" method="post">
-            <p style="display: contents">Trenutna : {{data[3]}}KM</p>
-            <label style="margin-left: 40px" for="plaća">Promjeni osnovnu plaću:
-        </label>
-
-            <input type="text" placeholder="Nova osnovna plaća" name="plaća" id="plaća" />
+        <h4>Pozicija:</h4>
+        <form style="text-align: left; display: contents" action="/changeOdjel" method="post">
+            <p style="display: contents">Trenutna: {{data[4]}}</p>
+            <label style="margin-left: 40px" for="plaća">Promjeni poziciju : </label>
+            <input type="text" placeholder="Novi Odjel" name="odjel" id="plaća" />
             <input type="submit" value="Promjeni" id="editButton" />
         </form>
-        <hr />
+
         <h4>Opis:</h4>
         <p>{{data[5]}}</p>
         <hr />
