@@ -17,9 +17,10 @@ def loginSuccs():
         cur = conn.cursor()
         bolean = cur.execute("SELECT * FROM admin where id = " + username)
         bolean = cur.fetchall()
+        print(bolean)
         if(bolean != [] and password == bolean[0][2]):
             cur.close()
-            return render_template('home.html', data = bolean[0][1])
+            return render_template('home.html', data = bolean)
         else:
             cur.execute("ROLLBACK")
             conn.commit()
@@ -71,7 +72,6 @@ def unesi():
         phone =  request.form['phone'] 
         department = request.form['department']
         position = request.form['position']
-        filename = request.form['filename']
-        print(firstname, lastname,birthday,adress,email,phone,department,position,filename)
+        print(firstname, lastname,birthday,adress,email,phone,department,position)
 
 app.run(debug=True)
