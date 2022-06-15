@@ -2,7 +2,7 @@ body,
 html {
     height: 100%;
     font-family: "Lato", sans-serif;
-    background-color: #323232;
+    background-image: url("../img/login-bg.jpg");
     color: antiquewhite;
 }
 
@@ -52,6 +52,7 @@ html {
 .header h1 {
     font-size: 40px;
 }
+
 
 /* Style the top navigation bar */
 
@@ -136,7 +137,6 @@ html {
     /* Some padding */
     text-align: center;
     /* Center text*/
-    background: #555;
     /* Grey background */
 }
 
