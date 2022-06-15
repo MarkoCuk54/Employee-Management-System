@@ -5,10 +5,48 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/home.css" />
-    <link rel="stylesheet" href="../static/editUser.css" />
-    <title>Edit User</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;700&family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../static/css/home.css" />
+    <link rel="stylesheet" href="../static/css/editUser.css" />
+    <title>editUser</title>
 </head>
+
+<body>
+    <nav>
+        <div class="newNav">
+            <form action="/logout">
+                <button id="logout" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white; font-size: large;">Odjavi se</button>
+            </form>
+            <br />
+            <form action="/obrasci">
+                <button id="obrasci" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white;font-size: large;">Obrasci</button>
+            </form>
+            <br />
+            
+            <form action="/događaji">
+                <button id="događaji" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white;font-size: large;">Događaji</button>
+            </form>
+            <br />
+            <form action="/dodaj">
+                <button id="dodaj" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white;font-size: large;">Dodaj zaposlenika</button>
+            </form>
+            <br />
+            <form action="/svi">
+                <button id="svi" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white;font-size: large;">Svi zaposlenici</button>
+            </form>
+            </div>
+            <h1 style="color: #1aa4bc;">Pozdrav, {{data}}</h1>
+        </div>
+    </nav>
+    <div class="hero-image">
+        <div class="hero-text">
+            <img src="../static/img/emerus.jpg" alt="emerus" width="500" height="128" />
+        </div>
+    </div>
+</body>
 
 <body>
     <h1>Sada možete uređivati ​​zaposlenika {{data[1]}} {{data[2]}}.</h1>
@@ -40,6 +78,10 @@
     <form class="form-nazad" action="/svi">
         <button class="button-nazad">Nazad</button>
     </form>
+
+    <div class="footer">
+        <h2 style="color: #1aa4bc;">Emerus, 2022.</h2>
+    </div>
 </body>
 
 </html>
