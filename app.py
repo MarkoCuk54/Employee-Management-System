@@ -1,4 +1,5 @@
 from turtle import position
+from xmlrpc.client import boolean
 from flask import Flask, request
 from flask import render_template
 from db_data import conn
@@ -20,7 +21,7 @@ def loginSuccs():
         print(bolean)
         if(bolean != [] and password == bolean[0][1]):
             cur.close()
-            return render_template('home.html', data = bolean)
+            return render_template('home.html', data = boolean)
         else:
             cur.execute("ROLLBACK")
             conn.commit()
@@ -67,7 +68,10 @@ def obrasci():
 
 @app.route("/editUser")
 def editUser():
-    return render_template("editUser.html")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM radnici")
+    data = cur.fetchall()
+    return render_template("editUser.html", data=data)
 
 
 @app.route("/unesi", methods=["POST"])
