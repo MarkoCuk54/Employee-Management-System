@@ -57,7 +57,7 @@
         <hr />
         <h4>Odjel:</h4>
         <form style="text-align: left; display: contents" action="/changeOdjel" method="post">
-            <p style="display: contents">Trenutni : {{data[4]}}</p>
+            <p style="display: contents">Trenutni : {{data[5]}}</p>
             <label style="margin-left: 40px" for="plaća">Promjeni Odjel : </label>
             <input type="text" placeholder="Novi Odjel" name="odjel" id="plaća" />
             <input type="submit" value="Promjeni" id="editButton" />
@@ -65,14 +65,11 @@
         <hr />
         <h4>Pozicija:</h4>
         <form style="text-align: left; display: contents" action="/changeOdjel" method="post">
-            <p style="display: contents">Trenutna: {{data[4]}}</p>
+            <p style="display: contents">Trenutna: {{data[6]}}</p>
             <label style="margin-left: 40px" for="plaća">Promjeni poziciju : </label>
             <input type="text" placeholder="Novi Odjel" name="odjel" id="plaća" />
             <input type="submit" value="Promjeni" id="editButton" />
         </form>
-
-        <h4>Opis:</h4>
-        <p>{{data[5]}}</p>
         <hr />
     </div>
     <form class="form-nazad" action="/svi">
