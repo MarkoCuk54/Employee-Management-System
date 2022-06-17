@@ -68,10 +68,7 @@ def obrasci():
 
 @app.route("/editUser")
 def editUser():
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM radnici")
-    data = cur.fetchall()
-    return render_template("editUser.html", data=data)
+    return render_template("editUser.html")
 
 
 @app.route("/unesi", methods=["POST"])
