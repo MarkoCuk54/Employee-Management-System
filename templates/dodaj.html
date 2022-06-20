@@ -59,7 +59,7 @@
           <label for="fname">Ime</label>
         </div>
         <div class="col-75">
-          <input type="text" id="fname" name="firstname" placeholder="ime">
+          <input type="text" id="fname" name="firstname" placeholder="ime" value="{{request.form.fname}}">
         </div>
       </div>
       <div class="row">
@@ -67,7 +67,7 @@
           <label for="lname">Prezime</label>
         </div>
         <div class="col-75">
-          <input type="text" id="lname" name="lastname" placeholder="prezime">
+          <input type="text" id="lname" name="lastname" placeholder="prezime" value="{{request.form.lname }}">
         </div>
       </div>
       <div class="row">
@@ -75,7 +75,7 @@
       <label for="birthday">Datum rođenja </label>
       </div>
         <div class="col-75">
-      <input type="text" id="birthday" name="birthday"><br><br>
+      <input type="text" id="birthday" name="birthday" placeholder="datum rođenja"value="{{request.form.birthday}}"><br><br>
         </div>
       </div>
       <div class="row">
@@ -83,7 +83,7 @@
       <label for="adress">Adresa</label>
       </div>
         <div class="col-75">
-      <input type="text" id="adress" name="adress" placeholder="adresa"><br><br>
+      <input type="text" id="adress" name="adress" placeholder="adresa" value="{{request.form.adress}}"><br><br>
     </div>
 </div>
       <div class="row">
@@ -91,7 +91,7 @@
       <label for="email">Email</label>
       </div>
         <div class="col-75">
-      <input type="email" id="email" name="email"placeholder="info@info.com"><br><br>
+      <input type="email" id="email" name="email"placeholder="info@info.com" value="{{request.form.email}}"><br><br>
     </div>
 </div>
       <div class="row">
@@ -99,7 +99,7 @@
       <label for="phone">Broj mobitela</label>
       </div>
         <div class="col-75">
-      <input type="tel" id="phone" name="phone" placeholder="000000000"><br><br>
+      <input type="tel" id="phone" name="phone" placeholder="000000000" value="{{request.form.phone}}"><br><br>
     </div>
 </div>
       <div class="row">
@@ -107,7 +107,7 @@
       <label for="odjel">Odjel</label>
       </div>
         <div class="col-75">
-      <select placeholder="Odjel" name="department" id="subject_input" required>
+      <select placeholder="Odjel" name="department" id="subject_input" required value="{{request.form.subject_input}}">
         <option disabled hidden selected>Odaberite odjel</option>
         <option value="Administracija">Administracija</option>
         <option value="Alatnica">Alatnica</option>
@@ -141,10 +141,10 @@
       <label for="position">Pozicija</label>
       </div>
         <div class="col-75">
-      <input type="text" id="position" name="position" placeholder="opis posla"><br><br>
+      <input type="text" id="position" name="position" placeholder="opis posla" value="{{request.form.position}}"><br><br>
     </div>
 </div>
-      <input type="submit" value="unesi" style="background-color:#1aa4bc">
+      <input class="btn btn-default" type="submit" value="Unesi" style="background-color:#1aa4bc">
     </form>
   </div>
 
