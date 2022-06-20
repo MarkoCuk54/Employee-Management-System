@@ -49,11 +49,12 @@
 
 <br>
 
-<h1 style="text-align: left;color: #1aa4bc;">Dodaj zaposlenika</h1>
 
+<h1 style="text-align: left;color: #1aa4bc;">Dodaj zaposlenika</h1>
+    
 <div class="container">
     <form action="/unesi" method="post">
-  
+      {% if data %}
         <div class="row">
         <div class="col-25">
           <label for="fname">Ime</label>
@@ -146,6 +147,7 @@
 </div>
       <input class="btn btn-default" type="submit" value="Unesi" style="background-color:#1aa4bc">
     </form>
+    {% endif %}
   </div>
 
   <div class="footer">

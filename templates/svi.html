@@ -58,14 +58,10 @@
     <input id="button-edit" type="submit" value="Uredi zaposlenika" style="background-color: #1aa4bc;border-color: #1aa4bc; font-size: medium;color: white">
 </form>
 </br>
-<form class="search-form" action="/searchUser" method="post">
-    <input style="margin-right: 10px" autocomplete="off" type="number" min=1 max=999 name="id" placeholder="ID">
-    <input id="button-search" type="submit" value="Pronađi" style="background-color: #1aa4bc;border-color: #1aa4bc;font-size: medium;color: white">
-</form>
-</br>
-<div class="table-wrapper">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pretraži po imenu">
 
-    <table class="fl-table">
+<div class="table-wrapper">
+    <table class="fl-table" id="myTable">
         <thead style="text-align: center">
             <tr>
                 <th>ID</th>
@@ -131,6 +127,29 @@
         });
     </script>
 
+<script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
     
+      // Loop through all table rows, and hide those who don't match the search query
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+    </script>
+
   </html>
 
