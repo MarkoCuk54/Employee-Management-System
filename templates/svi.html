@@ -50,7 +50,7 @@
 <br>
 <form class="delete-form" action="/deleteUser" method="post">
     <input style="margin-right: 10px" autocomplete="off" type="number" min=1 max=999 name="id" placeholder="ID">
-    <input id="button-delete" type="submit" value="Izbrisati" style="background-color: #1aa4bc;border-color: #1aa4bc;font-size: medium;color: white">
+    <input id="button-delete" type="submit" value="Izbrisati" onclick="myDeleteFunction()" style="background-color: #1aa4bc;border-color: #1aa4bc;font-size: medium;color: white">
 </form>
 </br>
 <form action="/editUser">
@@ -148,6 +148,10 @@
           }
         }
       }
+    }
+
+    function myDeleteFunction() {
+        document.getElementById("radnici").deleteRow(0);
     }
     </script>
 

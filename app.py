@@ -46,24 +46,17 @@ def svi():
     return render_template("svi.html", data = data)
 
 @app.route('/editUser', methods=["GET", "POST"])
-def editUser():
-        editUser.id = request.form['idEdit']
-        if(id != ""):
-            try:
-                cur = conn.cursor()
-                cur.execute("SELECT * FROM radnici where  id = " + str(editUser.id))
-                result = cur.fetchall()
-                return render_template('editUser.html', data=result[0])
-            except:
-                cur.execute("ROLLBACK")
-                conn.commit()
-                message = "ID ne postoji u Bazi"
-                return render_template('error.html', message=message)
-        else:
-            cur.execute("ROLLBACK")
-            conn.commit()
-            message = "Id polje ne smije biti prazno"
-            return render_template('error.html', message=message)
+def editUser ():
+    try: 
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM radnici")
+        data = cur.fetchall()
+        return render_template("editUser.html", data = data)
+    except:
+        cur.execute("ROLLBACK")
+        conn.commit()
+        message = "ID ne postoji u Bazi"
+        return render_template('error.html', message=message)
 
 @app.route('/deleteUser', methods=["POST"])
 def deleteUser ():
