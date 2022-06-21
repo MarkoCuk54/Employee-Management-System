@@ -3,6 +3,7 @@ from xmlrpc.client import boolean
 from flask import Flask, request
 from flask import render_template
 from db_data import conn
+import pandas as db
 
 app = Flask(__name__)
 
@@ -11,7 +12,7 @@ def login():
     return render_template('login.html')
 
 @app.route("/login", methods=["POST"])
-def loginSuccs():
+def loginSuccess():
     try:
         username =  request.form['username'] 
         password = request.form['password']
@@ -44,12 +45,59 @@ def svi():
     data = cur.fetchall()
     return render_template("svi.html", data = data)
 
+@app.route('/editUser', methods=["GET", "POST"])
+def editUser():
+        editUser.id = request.form['idEdit']
+        if(id != ""):
+            try:
+                cur = conn.cursor()
+                cur.execute("SELECT * FROM radnici where  id = " + str(editUser.id))
+                result = cur.fetchall()
+                return render_template('editUser.html', data=result[0])
+            except:
+                cur.execute("ROLLBACK")
+                conn.commit()
+                message = "ID ne postoji u Bazi"
+                return render_template('error.html', message=message)
+        else:
+            cur.execute("ROLLBACK")
+            conn.commit()
+            message = "Id polje ne smije biti prazno"
+            return render_template('error.html', message=message)
+
+@app.route('/deleteUser', methods=["POST"])
+def deleteUser ():
+    try:
+        id =  request.form['id'] 
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM radnici")
+        data = cur.fetchall()
+        return render_template("svi.html", data = data)
+    except:
+        cur.execute("ROLLBACK")
+        conn.commit()
+        message = "ID ne postoji u Bazi"
+        return render_template('error.html', message=message)
+
 @app.route("/dodaj")
 def dodaj():
     cur = conn.cursor()
     cur.execute("SELECT * FROM radnici")
     data = cur.fetchall()
     return render_template("dodaj.html", data = data)
+
+@app.route("/unesi", methods=["POST"])
+def unesi():
+    if request.method == 'POST':
+        firstname =  request.form['firstname'] 
+        lastname = request.form['lastname']
+        birthday =  request.form['birthday'] 
+        adress =  request.form['adress'] 
+        email = request.form['email']
+        phone =  request.form['phone'] 
+        department = request.form['department']
+        position = request.form['position']
+        print(firstname, lastname,birthday,adress,email,phone,department,position)
 
 @app.route("/događaji")
 def događaji():
@@ -65,22 +113,5 @@ def obrasci():
     data = cur.fetchall()
     return render_template("obrasci.html", data = data)
 # auto restart server on change
-
-@app.route("/editUser")
-def editUser():
-    return render_template("editUser.html")
-
-
-@app.route("/unesi", methods=["POST"])
-def unesi():
-        firstname =  request.form['firstname'] 
-        lastname = request.form['lastname']
-        birthday =  request.form['birthday'] 
-        adress =  request.form['adress'] 
-        email = request.form['email']
-        phone =  request.form['phone'] 
-        department = request.form['department']
-        position = request.form['position']
-        print(firstname, lastname,birthday,adress,email,phone,department,position)
 
 app.run(debug=True)
