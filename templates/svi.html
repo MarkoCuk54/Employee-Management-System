@@ -57,7 +57,7 @@
     <input id="button-edit" type="submit" value="Uredi zaposlenika" style="background-color: #1aa4bc;border-color: #1aa4bc; font-size: medium;color: white">
 </form>
 </br>
-<input type="text" id="myInput" placeholder="Pretraži po imenu">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pretraži po imenu">
 
 <div class="table-wrapper">
     <table class="fl-table" id="myTable">
@@ -72,6 +72,7 @@
                 <th>Broj mobitela</th>
                 <th>Odjel</th>
                 <th>Pozicija</th>
+                <th>Opcija</th>
 
             </tr>
         </thead>
@@ -89,6 +90,7 @@
                         <td>{{ row[4] }}</td>
                         <td>{{ row[5] }}</td>
                         <td>{{ row[6] }}</td>
+                        <td><input type="button" value="Delete" onclick="deleteRow(this)"></td>
                     </tr>
                 </tbody>
                 {% endfor %}
@@ -124,6 +126,33 @@
                 span.classList.add('active');
             }, 750 * (idx + 1))
         });
+
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+                }
+            }
+}
+
+function deleteRow(r) {
+    var i = r.parentNode.parentNode.rowIndex;
+    document.getElementById("myTable").deleteRow(i);
+}
     </script>
 
 
