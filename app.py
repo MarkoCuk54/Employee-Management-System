@@ -58,7 +58,7 @@ def editUser ():
         message = "ID ne postoji u Bazi"
         return render_template('error.html', message=message)
 
-@app.route('/deleteUser', methods=["POST"])
+@app.route('/deleteUser', methods=["GET", "POST"])
 def deleteUser ():
     try:
         id =  request.form['id'] 

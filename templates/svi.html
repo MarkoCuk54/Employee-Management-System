@@ -18,24 +18,23 @@
         <nav>
             <div class="newNav">
                 <form action="/logout">
-                    <button id="logout">Odjavi se</button>
+                    <button id="logout" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white; font-size: large;">Odjavi se</button>
                 </form>
                 <br />
                 <form action="/obrasci">
-                    <button id="obrasci">Obrasci</button>
+                    <button id="obrasci" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white; font-size: large;">Obrasci</button>
                 </form>
                 <br />
-                
                 <form action="/događaji">
-                    <button id="događaji">Događaji</button>
+                    <button id="događaji" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white; font-size: large;">Događaji</button>
                 </form>
                 <br />
                 <form action="/dodaj">
-                    <button id="dodaj">Dodaj zaposlenika</button>
+                    <button id="dodaj" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white; font-size: large;">Dodaj zaposlenika</button>
                 </form>
                 <br />
                 <form action="/svi">
-                    <button id="svi">Svi zaposlenici</button>
+                    <button id="svi" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white; font-size: large;">Svi zaposlenici</button>
                 </form>
                 </div>
                 <h1 style="color: #1aa4bc;">Pozdrav, {{data[0][1]}}</h1>
@@ -50,7 +49,7 @@
 <br>
 <form class="delete-form" action="/deleteUser" method="post">
     <input style="margin-right: 10px" autocomplete="off" type="number" min=1 max=999 name="id" placeholder="ID">
-    <input id="button-delete" type="submit" value="Izbrisati" onclick="myDeleteFunction()" style="background-color: #1aa4bc;border-color: #1aa4bc;font-size: medium;color: white">
+    <input id="button-delete" type="submit" value="Izbrisati" style="background-color: #1aa4bc;border-color: #1aa4bc;font-size: medium;color: white">
 </form>
 </br>
 <form action="/editUser">
@@ -58,7 +57,7 @@
     <input id="button-edit" type="submit" value="Uredi zaposlenika" style="background-color: #1aa4bc;border-color: #1aa4bc; font-size: medium;color: white">
 </form>
 </br>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pretraži po imenu">
+<input type="text" id="myInput" placeholder="Pretraži po imenu">
 
 <div class="table-wrapper">
     <table class="fl-table" id="myTable">
@@ -127,33 +126,7 @@
         });
     </script>
 
-<script>
-    function myFunction() {
-      // Declare variables
-      var input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("myTable");
-      tr = table.getElementsByTagName("tr");
-    
-      // Loop through all table rows, and hide those who don't match the search query
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[1];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        }
-      }
-    }
 
-    function myDeleteFunction() {
-        document.getElementById("radnici").deleteRow(0);
-    }
-    </script>
 
   </html>
 
