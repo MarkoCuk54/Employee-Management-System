@@ -47,17 +47,13 @@ def svi():
 
 @app.route('/editUser', methods=["GET", "POST"])
 def editUser ():
-    try: 
+        id =  request.form['edit']
         cur = conn.cursor()
-        cur.execute("SELECT * FROM radnici")
+        cur.execute("SELECT * FROM radnici where id = " + id)
         data = cur.fetchall()
-        return render_template("editUser.html", data = data)
-    except:
-        cur.execute("ROLLBACK")
-        conn.commit()
-        message = "ID ne postoji u Bazi"
-        return render_template('error.html', message=message)
-
+        print(data)
+        return render_template("editUser.html", data = data[0])
+    
 @app.route('/deleteUser', methods=["GET", "POST"])
 def deleteUser ():
     try:
