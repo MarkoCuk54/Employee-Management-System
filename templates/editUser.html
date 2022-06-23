@@ -57,18 +57,45 @@
         <p>{{data[8]}}</p>
         <hr />
         <h4>Odjel:</h4>
-        <form style="text-align: left; display: contents" action="/changeOdjel" method="post">
-            <p style="display: contents">Trenutni {{data[5]}}</p>
-            <label style="margin-left: 40px" for="plaća">Promjeni Odjel : </label>
-            <input type="text" placeholder="Novi Odjel" name="odjel" id="plaća" />
-            <input type="submit" value="Promjeni" id="editButton" />
+
+        <form style="text-align: left; display: contents" action="/changeDepartment" method="post">
+            <p style="display: contents">Trenutni: {{data[5]}}</p>
+            <label style="margin-left: 40px" for="department">Promjeni Odjel : </label>
+            <select placeholder="Odjel" name="department" id="subject_input" required value="{{request.form.subject_input}}">
+                <option disabled hidden selected>Odaberite odjel</option>
+                <option value="Administracija">Administracija</option>
+                <option value="Alatnica">Alatnica</option>
+                <option value="Financije i računovodstvo">Financije i računovodstvo</option>
+                <option value="IT Odjel">IT odjel</option>
+                <option value="Kontrola kvalitete">Kontrola kvalitete</option>
+                <option value="Ljudski resursi">Ljudski resursi</option>
+                <option value="Maloprodaja">Maloprodaja</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Odjel komercijale">Odjel komercijale</option>
+                <option value="Odjel korekcije">Odjel korekcije</option>
+                <option value="Odjel nabave">Odjel nabave</option>
+                <option value="Odjel osiguranja kvalitete">Odjel osiguranja kvalitete</option>
+                <option value="Odjel prodaje">Odjel prodaje</option>
+                <option value="Odjel proizvodnje - Preša">Odjel proizvodnje - Preša</option>
+                <option value="Odjel proizvodnje - Termički most">Odjel proizvodnje - Termički most</option>
+                <option value="Odjel proizvodnje - Pakiranje">Odjel proizvodnje - Pakiranje</option>
+                <option value="Odjel tehnologije">Odjel tehnologije</option>
+                <option value="Odjel za strojnu obradu">Odjel za strojnu obradu</option>
+                <option value="Odjel za zaštitu površine">Odjel za zaštitu površine</option>
+                <option value="Održavanje">Održavanje</option>
+                <option value="Proizvodnja">Proizvodnja</option>
+                <option value="Skladište profila">Skladište profila</option>
+                <option value="Tehnički odjel">Tehnički odjel</option>
+                <option value="Uprava">Uprava</option>
+              </select>
+            <input type="submit" value="Promjeni" id="editButton"/>
         </form>
         <hr />
         <h4>Pozicija:</h4>
-        <form style="text-align: left; display: contents" action="/changeOdjel" method="post">
-            <p style="display: contents">Trenutna: {{data[6]}}</p>
-            <label style="margin-left: 40px" for="plaća">Promjeni poziciju : </label>
-            <input type="text" placeholder="Novi Odjel" name="odjel" id="plaća" />
+        <form style="text-align: left; display: contents" action="/changePosition" method="post">
+            <p style="display: contents">Trenutna: {{data[6]}}KM</p>
+            <label style="margin-left: 40px" for="position">Promjeni poziciju: </label>
+            <input type="text" placeholder="Nova pozicija" name="position" id="position"/>
             <input type="submit" value="Promjeni" id="editButton" />
         </form>
         <hr />

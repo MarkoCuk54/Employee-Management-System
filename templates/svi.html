@@ -48,11 +48,11 @@
         </div>
 <br>
 <form action="/editUser" method="POST">
-    <input style="margin-right: 10px" autocomplete="off" type="number" min=1 max=999 name="edit" placeholder="ID">
-    <input id="edit" type="submit"  style="background-color: #1aa4bc;border-color: #1aa4bc; font-size: medium;color: white">
+    <input style="margin-left: 70px" autocomplete="off" type="number" min=1 max=999 name="edit" placeholder="ID">
+    <input id="edit" type="submit" value="Uredi zaposlenika" style="background-color: #1aa4bc;border-color: #1aa4bc; font-size: medium;color: white">
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pretraži po imenu">
 </form>
 </br>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pretraži po imenu">
 
 <div class="table-wrapper">
     <table class="fl-table" id="myTable">
@@ -148,6 +148,7 @@
 function deleteRow(r) {
     var i = r.parentNode.parentNode.rowIndex;
     document.getElementById("myTable").deleteRow(i);
+    document.getElementById("radnici").deleteRow(i);
 }
     </script>
 

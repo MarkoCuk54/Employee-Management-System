@@ -53,20 +53,6 @@ def editUser ():
         data = cur.fetchall()
         print(data)
         return render_template("editUser.html", data = data[0])
-    
-@app.route('/deleteUser', methods=["GET", "POST"])
-def deleteUser ():
-    try:
-        id =  request.form['id'] 
-        cur = conn.cursor()
-        cur.execute("SELECT * FROM radnici")
-        data = cur.fetchall()
-        return render_template("svi.html", data = data)
-    except:
-        cur.execute("ROLLBACK")
-        conn.commit()
-        message = "ID ne postoji u Bazi"
-        return render_template('error.html', message=message)
 
 @app.route("/dodaj")
 def dodaj():
