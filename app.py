@@ -2,7 +2,7 @@ from turtle import position
 from xmlrpc.client import boolean
 from flask import Flask, request
 from flask import render_template, request
-from db_data import conn
+from db_data import conn, db, Feedback
 from datetime import datetime, date
 
 
@@ -46,6 +46,18 @@ def svi():
     cur.execute("SELECT * FROM radnici")
     data = cur.fetchall()
     return render_template("svi.html", data = data)
+
+@app.route('/deleteUser', methods=["POST"])
+def deleteUser():
+    try:
+        id = request.form["id"]
+        db.session.query(Feedback).filter(Feedback.id==id).delete()
+        db.session.commit()
+        message='Uspješno ste izbrisali zaposlenika'
+        return render_template('error.html', message=message)
+    except:
+        message = "ID ne postoji u Bazi"
+        return render_template('error.html', message=message)
 
 @app.route("/deleteRow", methods=["DELETE"])
 def deleteRow():
