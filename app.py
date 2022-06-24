@@ -85,10 +85,27 @@ def changeDepartment():
 
 @app.route("/dodaj")
 def dodaj():
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM radnici")
-    data = cur.fetchall()
-    return render_template("dodaj.html", data = data)
+    if request.method == 'POST':
+        id = request.form["id"]
+        firstname = request.form['firstName']
+        lastname = request.form['lastName']
+        birthday = request.form['birthday']
+        adress = request.form["adress"]
+        email = request.form["email"]
+        phone = request.form["phone"]
+        department = request.form["department"]
+        position = request.form["position"]
+        if id == '' or firstname == '' or lastname == "" or birthday == "" or adress == "" or email == "" or phone == "" or department == "" or position == "":
+            return render_template('dodaj.html', message='Molim vas popunite obavezna polja')
+        try:
+            data = Feedback(id, firstname, lastname, birthday, adress, email, phone, department, position)
+            db.session.add(data)
+            db.session.commit()
+            return render_template('dodaj.html')
+        except:
+            cursor.execute("ROLLBACK")
+            con.commit()
+            return render_template('dodaj', message='Ovaj Radnik vec postoji u bazi')
 
 @app.route("/događaji")
 def događaji():
