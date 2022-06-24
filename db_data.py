@@ -9,7 +9,7 @@ app.debug = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:emerus2705@localhost/ems'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-con = psycopg2.connect(database="ems", user="postgres", password="emerus2705", host="127.0.0.1", port="5000")
+con = psycopg2.connect(database="ems", user="postgres", password="emerus2705", host="127.0.0.1", port="5432")
 cursor = con.cursor()
 db = SQLAlchemy(app)
 
