@@ -2,7 +2,7 @@ from turtle import position
 from xmlrpc.client import boolean
 from flask import Flask, request
 from flask import render_template, request
-from db_data import conn, db, Feedback
+from db_data import conn, db, Feedback, conn, cursor
 from datetime import datetime, date
 
 
@@ -49,15 +49,11 @@ def svi():
 
 @app.route('/deleteUser', methods=["POST"])
 def deleteUser():
-    try:
         id = request.form["id"]
         db.session.query(Feedback).filter(Feedback.id==id).delete()
         db.session.commit()
-        message='Uspješno ste izbrisali zaposlenika'
-        return render_template('error.html', message=message)
-    except:
-        message = "ID ne postoji u Bazi"
-        return render_template('error.html', message=message)
+        return render_template('svi.html')
+
 
 @app.route('/editUser', methods=["GET", "POST"])
 def editUser ():
@@ -77,35 +73,16 @@ def changeDepartment():
             izmjena = db.session.query(changeDepartment).filter(changeDepartment.id == editUser.id).one()
             izmjena.izmjena = noviOdjel
             db.session.commit()
-            message = "Uspješno ste promijenili odjel."
-            return render_template('editUser.html', message=message)
+            return render_template('editUser.html')
         except:
-            message = "Odjel je u pogrešnom formatu"
-            return render_template('editUser.html', message=message)
+            return render_template('editUser.html')
 
 @app.route("/dodaj")
 def dodaj():
-    if request.method == 'POST':
-        id = request.form["id"]
-        firstname = request.form['firstName']
-        lastname = request.form['lastName']
-        birthday = request.form['birthday']
-        adress = request.form["adress"]
-        email = request.form["email"]
-        phone = request.form["phone"]
-        department = request.form["department"]
-        position = request.form["position"]
-        if id == '' or firstname == '' or lastname == "" or birthday == "" or adress == "" or email == "" or phone == "" or department == "" or position == "":
-            return render_template('dodaj.html', message='Molim vas popunite obavezna polja')
-        try:
-            data = Feedback(id, firstname, lastname, birthday, adress, email, phone, department, position)
-            db.session.add(data)
-            db.session.commit()
-            return render_template('dodaj.html')
-        except:
-            cursor.execute("ROLLBACK")
-            con.commit()
-            return render_template('dodaj', message='Ovaj Radnik vec postoji u bazi')
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM radnici")
+    data = cur.fetchall()
+    return render_template("dodaj.html", data = data)
 
 @app.route("/događaji")
 def događaji():
