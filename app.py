@@ -59,16 +59,6 @@ def deleteUser():
         message = "ID ne postoji u Bazi"
         return render_template('error.html', message=message)
 
-@app.route("/deleteRow", methods=["DELETE"])
-def deleteRow():
-    id =  request.form['delete']
-    cur = conn.cursor()
-    cur.execute("DELETE * FROM radnici where id = " + id)
-    conn.commit()
-    data = cur.fetchall()
-    print(data)
-    return render_template("svi.html", data = data)
-
 @app.route('/editUser', methods=["GET", "POST"])
 def editUser ():
         id =  request.form['edit']
@@ -77,6 +67,21 @@ def editUser ():
         data = cur.fetchall()
         print(data)
         return render_template("editUser.html", data = data[0])
+
+@app.route('/changeDepartment', methods=["POST"])
+def changeDepartment():
+        noviOdjel = request.form["department"]
+        try:
+            user = db.session.query(Feedback).filter(Feedback.id == editUser.id).one()
+            user.Department = noviOdjel
+            izmjena = db.session.query(changeDepartment).filter(changeDepartment.id == editUser.id).one()
+            izmjena.izmjena = noviOdjel
+            db.session.commit()
+            message = "Uspješno ste promijenili odjel."
+            return render_template('editUser.html', message=message)
+        except:
+            message = "Odjel je u pogrešnom formatu"
+            return render_template('editUser.html', message=message)
 
 @app.route("/dodaj")
 def dodaj():
