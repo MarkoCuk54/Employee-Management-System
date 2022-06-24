@@ -1,3 +1,5 @@
+import os
+import psycopg2
 from db_data import conn
 
 # Open a cursor to perform database operations

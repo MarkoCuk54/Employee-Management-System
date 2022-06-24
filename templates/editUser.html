@@ -52,9 +52,8 @@
     <h1>Sada možete uređivati ​​zaposlenika.</h1>
 
     <div class="info">
-        <h4>ID:</h4>
-        <p>{{data[0]}}</p>
-        <p>{{data[8]}}</p>
+        <h4>ID: {{data[0]}}</h4>
+        <p>Email: {{data[8]}}</p>
         <hr />
         <h4>Odjel:</h4>
 
@@ -93,7 +92,7 @@
         <hr />
         <h4>Pozicija:</h4>
         <form style="text-align: left; display: contents" action="/changePosition" method="post">
-            <p style="display: contents">Trenutna: {{data[6]}}KM</p>
+            <p style="display: contents">Trenutna: {{data[6]}}</p>
             <label style="margin-left: 40px" for="position">Promjeni poziciju: </label>
             <input type="text" placeholder="Nova pozicija" name="position" id="position"/>
             <input type="submit" value="Promjeni" id="editButton" />

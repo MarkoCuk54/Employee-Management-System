@@ -45,6 +45,13 @@ def svi():
     data = cur.fetchall()
     return render_template("svi.html", data = data)
 
+@app.route("/deleteRow")
+def deleteRow():
+    cur = conn.cursor()
+    cur.execute("DELETE * FROM radnici")
+    data = cur.fetchall()
+    return render_template("svi.html", data = data)
+
 @app.route('/editUser', methods=["GET", "POST"])
 def editUser ():
         id =  request.form['edit']
@@ -60,19 +67,6 @@ def dodaj():
     cur.execute("SELECT * FROM radnici")
     data = cur.fetchall()
     return render_template("dodaj.html", data = data)
-
-@app.route("/unesi", methods=["POST"])
-def unesi():
-    if request.method == 'POST':
-        firstname =  request.form['firstname'] 
-        lastname = request.form['lastname']
-        birthday =  request.form['birthday'] 
-        adress =  request.form['adress'] 
-        email = request.form['email']
-        phone =  request.form['phone'] 
-        department = request.form['department']
-        position = request.form['position']
-        print(firstname, lastname,birthday,adress,email,phone,department,position)
 
 @app.route("/događaji")
 def događaji():
