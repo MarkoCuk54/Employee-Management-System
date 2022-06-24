@@ -45,11 +45,14 @@ def svi():
     data = cur.fetchall()
     return render_template("svi.html", data = data)
 
-@app.route("/deleteRow")
+@app.route("/deleteRow", methods=["DELETE"])
 def deleteRow():
+    id =  request.form['delete']
     cur = conn.cursor()
-    cur.execute("DELETE * FROM radnici")
+    cur.execute("DELETE * FROM radnici where id = " + id)
+    conn.commit()
     data = cur.fetchall()
+    print(data)
     return render_template("svi.html", data = data)
 
 @app.route('/editUser', methods=["GET", "POST"])
