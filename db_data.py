@@ -31,11 +31,13 @@ class Feedback(db.Model):
     department = db.Column(db.Text())
     position   = db.Column(db.String(30))
 
-    def __init__(self, id, firstname, lastname,  Satnica, Odjel, Opis, JMBG):
+def __init__(self, id, firstname, lastname, birthday, adress, email, phone, department, position):
         self.id = id
         self.firstname = firstname
         self.lastname = lastname
-        self.JMBG = JMBG
-        self.Satnica = Satnica
-        self.Odjel = Odjel
-        self.Opis = Opis
+        self.birthday = birthday
+        self.adress = adress
+        self.email = email
+        self.phone = phone
+        self.department = department
+        self.position = position
