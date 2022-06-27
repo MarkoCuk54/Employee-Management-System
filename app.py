@@ -77,6 +77,19 @@ def changeDepartment():
         except:
             return render_template('editUser.html')
 
+@app.route('/changePosition', methods=["POST"])
+def changePosition():
+        novaPozicija = request.form["position"]
+        try:
+            user = db.session.query(Feedback).filter(Feedback.id == editUser.id).one()
+            user.Position = novaPozicija
+            izmjena = db.session.query(changePosition).filter(changePosition.id == editUser.id).one()
+            izmjena.izmjena = novaPozicija
+            db.session.commit()
+            return render_template('editUser.html')
+        except:
+            return render_template('editUser.html')
+
 @app.route("/dodaj")
 def dodaj():
     cur = conn.cursor()
