@@ -50,7 +50,17 @@
 <br>
 
 
-<h1 style="text-align: left;color: #1aa4bc;">Dodaj zaposlenika</h1>
+<h1>Dodaj zaposlenika</h1>
+<form action="/submit_noviRadnik" method="post">
+  {% if message %}
+  <p class="message">{{ message | safe }}</p>
+  {% endif %}
+  <div id="container">
+    <h1>&bull; Unos zaposlenika &bull;</h1>
+    <div class="underline">
+    </div>
+    <div class="icon_wrapper">
+    </div>
     
 <div class="container">
     <form action="/unesi" method="post">
@@ -145,7 +155,7 @@
       <input type="text" id="position" name="position" placeholder="opis posla" value="{{request.form.position}}"><br><br>
     </div>
 </div>
-      <input class="btn btn-default" type="submit" action="/dodaj" value="Unesi" style="background-color:#1aa4bc">
+      <input class="btn btn-default" type="submit" value="Unesi" style="background-color:#1aa4bc">
     </form>
     {% endif %}
   </div>

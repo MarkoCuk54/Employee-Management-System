@@ -1,4 +1,3 @@
-from crypt import methods
 from turtle import position
 from xmlrpc.client import boolean
 from flask import Flask, request
@@ -94,21 +93,35 @@ def changePosition():
         except:
             return render_template('editUser.html')
 
-@app.route("/dodaj", methods=["POST"])
+@app.route("/dodaj")
 def dodaj():
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM radnici")
+    data = cur.fetchall()
+    return render_template("dodaj.html", data = data)
+
+@app.route('/submit_noviRadnik', methods=['POST'])
+def submitNoviRadnik():
     if request.method == 'POST':
-        firstname = request.form['firstname']
-        lastname = request.form['lastname']
+        firstname = request.form['firstName']
+        lastname = request.form['lastName']
         birthday = request.form['birthday']
-        adress = request.form['adress']
-        email = request.form['email']
-        phone = request.form['phone']
-        department = request.form['department']
-        position = request.form['position']
-        data = Feedback(firstname, lastname, birthday, adress, email, phone, department, position)
-        db.session.add(data)
-        db.session.commit()
-        return render_template('svi.html')
+        adress = request.form["adress"]
+        email = request.form["email"]
+        phone = request.form["phone"]
+        department = request.form["department"]
+        position = request.form["position"]
+        if firstname == '' or lastname == "":
+            return render_template('dodajRadnika.html', message='Molim vas popunite obavezna polja')
+        try:
+            data = Feedback(id, firstname, lastname, birthday, adress, email, phone, department, position)
+            db.session.add(data)
+            db.session.commit()
+            return render_template('svi.html')
+        except:
+            cursor.execute("ROLLBACK")
+            conn.commit()
+            return render_template('dodajRadnika.html', message='Ovaj Radnik vec postoji u bazi')
 
 @app.route("/događaji")
 def događaji():
