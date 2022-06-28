@@ -51,12 +51,11 @@ def svi():
 def deleteUser():
         id = request.form["id"]
         cur = conn.cursor()
-        cur.execute("SELECT * FROM radnici where id = " + id)
+        cur.execute("DELETE * FROM radnici where id = " + id)
         data = cur.fetchall()
         db.session.query(Feedback).filter(Feedback.id==id).delete()
         db.session.commit()
         return render_template("svi.html",  data = data)
-
 
 @app.route('/editUser', methods=["GET", "POST"])
 def editUser ():
@@ -114,7 +113,7 @@ def submitNoviRadnik():
         if firstname == '' or lastname == "":
             return render_template('dodajRadnika.html', message='Molim vas popunite obavezna polja')
         try:
-            data = Feedback(id, firstname, lastname, birthday, adress, email, phone, department, position)
+            data = Feedback(firstname, lastname, birthday, adress, email, phone, department, position)
             db.session.add(data)
             db.session.commit()
             return render_template('svi.html')
