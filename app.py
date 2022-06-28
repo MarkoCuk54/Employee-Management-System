@@ -54,7 +54,7 @@ def svi():
     data = cur.fetchall()
     return render_template("svi.html", data = data)
 
-@app.route('/deleteUser', methods=["POST"])
+@app.route('/deleteUser', methods=["GET, POST"])
 def deleteUser():
         id = request.form["id"]
         cur = conn.cursor()
