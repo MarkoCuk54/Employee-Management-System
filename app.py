@@ -13,6 +13,13 @@ app = Flask(__name__)
 def login():
     return render_template('login.html')
 
+@app.route("/home")
+def home():
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM radnici")
+    data = cur.fetchall()
+    return render_template("home.html", data = data)
+
 @app.route("/login", methods=["POST"])
 def loginSuccess():
     try:
