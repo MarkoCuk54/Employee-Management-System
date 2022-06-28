@@ -109,8 +109,8 @@ def dodaj():
 @app.route('/submit_noviRadnik', methods=['POST'])
 def submitNoviRadnik():
     if request.method == 'POST':
-        firstname = request.form['firstName']
-        lastname = request.form['lastName']
+        firstname = request.form['firstname']
+        lastname = request.form['lastname']
         birthday = request.form['birthday']
         adress = request.form["adress"]
         email = request.form["email"]
@@ -118,16 +118,16 @@ def submitNoviRadnik():
         department = request.form["department"]
         position = request.form["position"]
         if firstname == '' or lastname == "":
-            return render_template('dodajRadnika.html', message='Molim vas popunite obavezna polja')
+            return render_template('dodaj.html')
         try:
             data = Feedback(firstname, lastname, birthday, adress, email, phone, department, position)
             db.session.add(data)
             db.session.commit()
-            return render_template('svi.html')
+            return render_template('dodaj.html')
         except:
             cursor.execute("ROLLBACK")
             conn.commit()
-            return render_template('dodajRadnika.html', message='Ovaj Radnik vec postoji u bazi')
+            return render_template('dodaj.html')
 
 @app.route("/događaji")
 def događaji():
