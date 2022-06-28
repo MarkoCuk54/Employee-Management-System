@@ -1,10 +1,11 @@
+from crypt import methods
 from turtle import position
 from xmlrpc.client import boolean
 from flask import Flask, request
 from flask import render_template, request
-from db_data import conn, db, Feedback, conn, cursor
+from db_data import conn, db, Feedback, conn, cursor, app
 from datetime import datetime, date
-
+from werkzeug.utils import secure_filename
 
 
 app = Flask(__name__)
@@ -50,9 +51,12 @@ def svi():
 @app.route('/deleteUser', methods=["POST"])
 def deleteUser():
         id = request.form["id"]
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM radnici where id = " + id)
+        data = cur.fetchall()
         db.session.query(Feedback).filter(Feedback.id==id).delete()
         db.session.commit()
-        return render_template('svi.html')
+        return render_template("svi.html",  data = data)
 
 
 @app.route('/editUser', methods=["GET", "POST"])
@@ -90,12 +94,21 @@ def changePosition():
         except:
             return render_template('editUser.html')
 
-@app.route("/dodaj")
+@app.route("/dodaj", methods=["POST"])
 def dodaj():
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM radnici")
-    data = cur.fetchall()
-    return render_template("dodaj.html", data = data)
+    if request.method == 'POST':
+        firstname = request.form['firstname']
+        lastname = request.form['lastname']
+        birthday = request.form['birthday']
+        adress = request.form['adress']
+        email = request.form['email']
+        phone = request.form['phone']
+        department = request.form['department']
+        position = request.form['position']
+        data = Feedback(firstname, lastname, birthday, adress, email, phone, department, position)
+        db.session.add(data)
+        db.session.commit()
+        return render_template('svi.html')
 
 @app.route("/događaji")
 def događaji():
