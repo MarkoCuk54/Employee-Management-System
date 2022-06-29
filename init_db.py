@@ -18,9 +18,7 @@ cur.execute('INSERT INTO admin (username, password)'
             'VALUES (%s, %s)',
             ('marko54',
 #https://x-team.com/blog/storing-secure-passwords-with-postgresql/ adding STORING PASSWORDS SECURELY WITH POSTGRESQL AND PGCRYPTO after deployment, dont work on windows 
-             'emerus2705')
-            )
-
+             'emerus2705'))
 
 conn.commit()
 cur.close()

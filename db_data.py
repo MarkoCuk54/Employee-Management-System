@@ -25,10 +25,10 @@ class Feedback(db.Model):
     firstname = db.Column(db.String(30))
     lastname = db.Column(db.String(30))
     birthday = db.Column(db.String(30))
-    adress = db.Column(db.String(30))
-    email = db.Column(db.Text())
+    adress = db.Column(db.String(50))
+    email = db.Column(db.String(30))
     phone   = db.Column(db.String(30))
-    department = db.Column(db.Text())
+    department = db.Column(db.String(30))
     position   = db.Column(db.String(30))
 
 def __init__(self, id, firstname, lastname, birthday, adress, email, phone, department, position):
