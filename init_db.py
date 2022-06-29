@@ -21,8 +21,6 @@ cur.execute('INSERT INTO admin (username, password)'
              'emerus2705')
             )
 
-#Execute a command: this delete a row
-cur.execute("DELETE * FROM radnici where id = " + id)
 
 conn.commit()
 cur.close()
