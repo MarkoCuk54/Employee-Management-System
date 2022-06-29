@@ -1,11 +1,7 @@
 from turtle import position
 from xmlrpc.client import boolean
-from flask import Flask, request
-from flask import render_template, request
+from flask import render_template, request, Flask
 from db_data import conn, db, Feedback, conn, cursor, app
-from datetime import datetime, date
-from werkzeug.utils import secure_filename
-
 
 app = Flask(__name__)
 
@@ -20,7 +16,7 @@ def home():
     data = cur.fetchall()
     return render_template("home.html", data = data)
 
-@app.route("/login", methods=["POST"])
+@app.route("/login", methods=["GET, POST"])
 def loginSuccess():
     try:
         username =  request.form['username'] 
@@ -54,7 +50,7 @@ def svi():
     data = cur.fetchall()
     return render_template("svi.html", data = data)
 
-@app.route('/deleteUser', methods=["GET, POST"])
+@app.route('/deleteUser', methods=["DELETE"])
 def deleteUser():
         id = request.form["id"]
         cur = conn.cursor()
@@ -117,8 +113,6 @@ def submitNoviRadnik():
         phone = request.form["phone"]
         department = request.form["department"]
         position = request.form["position"]
-        if firstname == '' or lastname == "":
-            return render_template('dodaj.html')
         try:
             data = Feedback(firstname, lastname, birthday, adress, email, phone, department, position)
             db.session.add(data)
