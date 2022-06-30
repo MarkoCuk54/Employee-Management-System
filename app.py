@@ -138,4 +138,8 @@ def obrasci():
     return render_template("obrasci.html", data = data)
 # auto restart server on change
 
+@app.route("/error")
+def logout():
+    return render_template("error.html")
+
 app.run(debug=True)
