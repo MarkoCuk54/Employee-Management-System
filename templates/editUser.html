@@ -61,7 +61,7 @@
         <hr />
         <h4>Odjel:</h4>
 
-        <form style="text-align: left; display: contents" action="/changeDepartment" method="post">
+        <form style="text-align: left; display: contents" method="post">
             <p style="display: contents">Trenutni: {{data[5]}}</p>
             <label style="margin-left: 40px" for="department">Promjeni Odjel : </label>
             <select placeholder="Odjel" name="department" id="subject_input" required value="{{request.form.subject_input}}">
@@ -91,7 +91,7 @@
                 <option value="Tehnički odjel">Tehnički odjel</option>
                 <option value="Uprava">Uprava</option>
               </select>
-            <input type="submit" value="Promjeni" id="editButton"/>
+            <input type="submit" value="Promjeni" id="editButton" action="/changeDepartment" />
         </form>
         <hr />
         <h4>Pozicija:</h4>
