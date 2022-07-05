@@ -50,15 +50,17 @@ def svi():
     data = cur.fetchall()
     return render_template("svi.html", data = data)
 
-@app.route('/deleteUser', methods=["DELETE"])
+@app.route('/deleteUser', methods=["GET", "DELETE"])
 def deleteUser():
+    try:
         id = request.form["id"]
-        cur = conn.cursor()
-        cur.execute("DELETE * FROM radnici where id = " + id)
-        data = cur.fetchall()
         db.session.query(Feedback).filter(Feedback.id==id).delete()
         db.session.commit()
-        return render_template("svi.html",  data = data)
+        message='Uspješno ste izbrisali zaposlenika'
+        return render_template('error.html', message=message)
+    except:
+        message = "ID ne postoji u Bazi"
+        return render_template('error.html', message=message)
 
 @app.route('/editUser', methods=["GET", "POST"])
 def editUser ():
@@ -122,13 +124,6 @@ def submitNoviRadnik():
             cursor.execute("ROLLBACK")
             conn.commit()
             return render_template('dodaj.html')
-
-@app.route("/događaji")
-def događaji():
-    cur = conn.cursor()
-    cur.execute("SELECT * FROM radnici")
-    data = cur.fetchall()
-    return render_template("događaji.html", data = data)
 
 @app.route("/obrasci")
 def obrasci():

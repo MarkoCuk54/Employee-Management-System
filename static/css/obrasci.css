@@ -1,108 +1,103 @@
 .header {
-    width: 200 px;
-    background-color: white;
-     /* some padding */
-  }
-
-  label {
-  
-  color: #000;
+  width: 200 px;
+   /* some padding */
 }
-  
-  /* Increase the font size of the <h1> element */
-  .header h1 {
-    font-size: 40px;
-  }
 
-  .vertical-menu {
-    width: 100%; /* Set a width if you like */
-  }
-  
-  .vertical-menu a {
-    background-color: #1aa4bc; /* Blue background color */
-    color: white; /* Black text color */
-    display: inline-block; /* Make the links appear below each other */
-    padding: 12px; /* Add some padding */
-    text-decoration: none; /* Remove underline from links */
-  }
-  
-  .vertical-menu a:hover {
-    background-color: #ccc; /* Dark grey background on mouse-over */
-  }
-  
-  .vertical-menu a.active {
-    background-color: #04AA6D; /* Add a green color to the "active/current" link */
-    color: white;
-  }
 
-  /* Style inputs with type="text", select elements and textareas */
+/* Increase the font size of the <h1> element */
+.header h1 {
+  font-size: 40px;
+  color: #1aa4bc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 input[type=text], select, textarea {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */ 
-  border: 1px solid #ccc; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 22px;
+  resize: vertical;
 }
 
-/* Style the submit button with a specific background color etc */
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
 input[type=submit] {
-  background-color: #1a7bbc;
+  background-color: #1e71af;
   color: white;
   padding: 12px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 22px;
   cursor: pointer;
+  float: right;
 }
 
-/* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
   background-color: #45a049;
 }
 
-/* Add a background color and some padding around the form */
 .container {
-  border-radius: 5px;
+  border-radius: 22px;
   background-color: #f2f2f2;
   padding: 20px;
 }
 
-  .footer {
-    padding: 20px; /* Some padding */
-    text-align: center; /* Center text*/
-  }
-    
-  
-  .icon-bar {
-      width: 100%; /* Full-width */
-      background-color: #555; /* Dark-grey background */
-      overflow: auto; /* Overflow due to float */
-    }
-    
-    .icon-bar a {
-      float: left; /* Float links side by side */
-      text-align: center; /* Center-align text */
-      width: 12%; /* Equal width (5 icons with 20% width each = 100%) */
-      padding: 12px 0; /* Some top and bottom padding */
-      transition: all 0.3s ease; /* Add transition for hover effects */
-      color: white; /* White text color */
-      font-size: 36px; /* Increased font size */
-    }
-    
-    .icon-bar a:hover {
-      background-color: #000; /* Add a hover color */
-    }
-    
-    .active {
-      background-color: #1aa4bc; /* Add an active/current color */
-    }
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
 
-    .body {
-        padding: 60px;
-        text-align: center;
-        background: white;
-        color: #1aa4bc;
-        font-size: 30px;
-      }
+.col-75 {
+  float: left;
+  width: 45%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: #093451;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover{
+    color: #1e71af;
+}
+
+.footer {
+  padding: 200pt;
+  text-align: center;
+  background-position: center;
+}
+
+.footer a{
+text-decoration-line: none;
+}
+
+

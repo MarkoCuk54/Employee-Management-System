@@ -5,66 +5,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;700&family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../static/css/home.css" />
     <link rel="stylesheet" href="../static/css/editUser.css" />
-    <title>editUser</title>
+    <title>Uredi zaposlenika</title>
 </head>
 
 <body>
-    <nav>
-        <div class="newNav">
-            <form action="/logout">
-                <button id="logout" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white; font-size: large;">Odjavi se</button>
-            </form>
-            <br />
-            <form action="/obrasci">
-                <button id="obrasci" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white;font-size: large;">Obrasci</button>
-            </form>
-            <br />
-            
-            <form action="/događaji">
-                <button id="događaji" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white;font-size: large;">Događaji</button>
-            </form>
-            <br />
-            <form action="/dodaj">
-                <button id="dodaj" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white;font-size: large;">Dodaj zaposlenika</button>
-            </form>
-            <br />
-            <form action="/svi">
-                <button id="svi" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white;font-size: large;">Svi zaposlenici</button>
-            </form>
-            <br />
-            <form action="/home">
-                <button id="home" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white;font-size: large;">Početna</button>
-            </form>
-            </div>
-            <h1 style="color: #1aa4bc;">Pozdrav, {{data [1]}}</h1>
-        </div>
-    </nav>
-    <div class="hero-image">
-        <div class="hero-text">
-            <img src="../static/img/emerus.jpg" alt="emerus" width="500" height="128" />
-        </div>
-    </div>
-</body>
+    <div class="hero">
+        <nav>
+            <img src="https://db3pap006files.storage.live.com/y4mF56np5tDzVNvpWxb_T7c7xDdDATRqQBq8mKK96-zSzDASofj7B2FCLeTgM3ZpiELQPSgA5CE223xZBCq5Sl7N0qUu2jQ5_VmQfERKlqOtjVz8QRgaIIXt1cAM-wdxuEuVUw-tVWCFy_h2Jo1UpXKVX5QqUTCQlYff5mFgNiByCqWegZIGQRJQJ0NVDqydHyZogSkTK1GyHZ_hO-pCHHqwA/logo.png?psid=1&width=230&height=112" class="logo">
+            <ul>
+                <li><a href="/home">Naslovnica</a></li>
+                <li><a href="/svi">Svi zaposlenici</a></li>
+                <li><a href="/dodaj">Dodaj zaposlenika</a></li>
+                <li><a href="/obrasci">Obrasci</a></li>
+                <li><a href="/logout">Odjavi se</a></li>
+            </ul>
+        </nav>
 
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+<br>
+<br>
+<br>
 <body>
-    <h1>Sada možete uređivati ​​zaposlenika.</h1>
+    <h1 style="margin-left: 8%; color: #093451;">Sada možete uređivati zaposlenika</h1>
+    <br><br><br><br>
 
-    <div class="info">
-        <h4>ID: {{data[0]}}</h4>
-        <p>Email: {{data[8]}}</p>
-        <hr />
-        <h4>Odjel:</h4>
+    <div class="info" style="margin-left: 8%;">
+        <p>Ime: {{data[1]}}</p><br>
+        <p>Prezime: {{data[2]}}</p><br>
+        <p>Email: {{data[8]}}</p> <br><br><br><br>
+
+      
+        <h4>Odjel:</h4> <br>
 
         <form style="text-align: left; display: contents" method="post">
             <p style="display: contents">Trenutni: {{data[5]}}</p>
-            <label style="margin-left: 40px" for="department">Promjeni Odjel : </label>
-            <select placeholder="Odjel" name="department" id="subject_input" required value="{{request.form.subject_input}}">
+            <label style="margin-left: 40px" for="department">Promjeni odjel : </label>
+            <select placeholder="Odjel" name="department" id="subject_input" required value="{{request.form.subject_input}}" style="border-radius: 22px;height: 40px;">
                 <option disabled hidden selected>Odaberite odjel</option>
                 <option value="Administracija">Administracija</option>
                 <option value="Alatnica">Alatnica</option>
@@ -91,24 +71,35 @@
                 <option value="Tehnički odjel">Tehnički odjel</option>
                 <option value="Uprava">Uprava</option>
               </select>
-            <input type="submit" value="Promjeni" id="editButton" action="/changeDepartment" />
+            <input type="submit" value="Promjeni" id="editButton" action="/changeDepartment" style="border-radius: 22px; height: 40px;width: 100px;">
         </form>
-        <hr />
+        <br><br><br><br>
         <h4>Pozicija:</h4>
         <form style="text-align: left; display: contents" action="/changePosition" method="post">
             <p style="display: contents">Trenutna: {{data[6]}}</p>
             <label style="margin-left: 40px" for="position">Promjeni poziciju: </label>
-            <input type="text" placeholder="Nova pozicija" name="position" id="position"/>
-            <input type="submit" value="Promjeni" id="editButton" />
+            <input type="text" placeholder="Nova pozicija" name="position" id="position" style="border-radius: 22px; height: 40px;width: 220px;">
+            <input type="submit" value="Promjeni" id="editButton" style="border-radius: 22px; height: 40px;width: 100px;">
         </form>
-        <hr />
+      <br><br><br><br>
     </div>
-    <form class="form-nazad" action="/svi">
-        <button class="button-nazad">Nazad</button>
+    <form class="form-nazad" action="/svi" style="margin-left: 8%">
+        <button class="button-nazad" style="background-color: #1e71af; color: white; border: none; border-radius: 22px;width: 100px; height: 40px;">Nazad</button>
     </form>
     <br>
+
     <div class="footer">
-        <h2 style="color: #1aa4bc;">Emerus, 2022.</h2>
+        <a href="https://www.facebook.com/emerus.eu/">
+            <img src="https://db3pap006files.storage.live.com/y4mdhlYKefN6ZjzbX3OwGib504rtBl0ENcbCtIUmLrGuTouKr2f4qWL8p8xl89SKF3wsuaZZpwDJXIx_v2MZYBFRwlJhLR5NadTER4isJOEMF-QFE5ymlAxIXh_8sPd3RO4Hprhf77SQ7rlLvIqZrDCNOGLv85vrvfIgx5WvUdYtoyyFr-zmd_tELhKlBmR4bbWbJdY8HV69i51XNkgfiCtAA/facebook.png?psid=1&width=20&height=20&cropMode=center" style="width: 25px;">
+        </a>
+
+        <a href="https://ba.linkedin.com/company/emeruseu">
+            <img src="https://db3pap006files.storage.live.com/y4m1EqU-JPW73s_vZ3rROVGDjMtNflU1cAOxneoORqlaV2Ejv--ejwTYzP5yDHvYCxQSAoPJbQ4foOx6aY9C0VO0VJFpxq5whs0UHnNNis_4yRbql_ppGW_idNfY_yMOhE3z45CISqxHQ7GxTUUZyEJTD_wqHLW7prp88ccb-G8eDtKoqpUBSHMmPtk9wNl8Ybcn4JB-nQFIjO4MyZk7gWvoQ/linkedin.png?psid=1&width=20&height=20&cropMode=center" style="width: 25px;">
+        </a>
+
+        <a href="https://www.instagram.com/emerus.doo/?hl=en">
+            <img src="https://db3pap006files.storage.live.com/y4m9ycuV2_x6MO0Pe2hsiXxN0ssCnOBw3D02aQU7lxeDnldknX-0UQXop-pAy0fJa5s7gCyS5d87-IV1SDhU5bAUysFJ_okjVkkD4P2TlxApFGgzt2mW_eHW6xa6npb_9MNgmZ9uMe9CneHseTPaMU3_VqnlR1vHhpJc2_lYyjTBGaWdZ7bDS0pz35Z3p-PxgNw4oBfKSf_-I1UD1E6qIIg1w/instagram.png?psid=1&width=20&height=20&cropMode=center" style="width: 25px;">
+        </a>
     </div>
 </body>
 

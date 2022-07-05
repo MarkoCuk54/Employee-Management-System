@@ -8,34 +8,36 @@
     <link rel="stylesheet" href="../static/css/login.css">
 
 </head>
+<div class="container" >
+	<div class="screen">
+		<div class="screen__content">
+			<form class="login" action="/login">
+				<div class="login__field">
+					<i class="login__icon fas fa-user"></i>
+					<input type="text" id="username" name="username" class="login__input" placeholder="username" value="{{request.form.username }}">
+				</div>
+				<div class="login__field">
+					<i class="login__icon fas fa-lock"></i>
+					<input type="password" id="password" name="password" class="login__input" placeholder="password" value="{{request.form.password}}">
+				</div>
+				<button class="button login__submit">
+					<span class="button__text" type="submit">Prijavi se</span>
+					<i class="button__icon fas fa-chevron-right"></i>
+				</button>				
+			</form>
+		</div>
+		<div class="screen__background">
+			<span class="screen__background__shape screen__background__shape4"></span>
+			<span class="screen__background__shape screen__background__shape3"></span>		
+			<span class="screen__background__shape screen__background__shape2"></span>
+			<span class="screen__background__shape screen__background__shape1"></span>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<img src="https://db3pap006files.storage.live.com/y4mF56np5tDzVNvpWxb_T7c7xDdDATRqQBq8mKK96-zSzDASofj7B2FCLeTgM3ZpiELQPSgA5CE223xZBCq5Sl7N0qUu2jQ5_VmQfERKlqOtjVz8QRgaIIXt1cAM-wdxuEuVUw-tVWCFy_h2Jo1UpXKVX5QqUTCQlYff5mFgNiByCqWegZIGQRJQJ0NVDqydHyZogSkTK1GyHZ_hO-pCHHqwA/logo.png?psid=1&width=230&height=112">
+	<h3>Baza podataka zaposlenika</h3>
+</div>
 
-<body>
-    {% if data %}
-    <h2 style="color: red; padding-top: 50px;" class="error">{{ data}}</h2>
-    {% endif %}
-    <div id="login-form-wrap">
-        <h2>Emerus</h2>
-        <form action="/login" method="post">
-            <div class="container">
-                <div class="card">
-                    <div class="content">
-                        <h2> Baza Podataka Radnika</h2>
-                        <form action="" method="post">
-                            <input type="text" id="username" name="username" placeholder="ID" value="{{
-                        request.form.username }}">
-                            <br>
-                            <br>
-                            <input type="password" id="email" name="password" placeholder="Password" value="{{
-                      request.form.password }}">
-                            <br />
-                            <br />
-                            <input class="btn btn-default" type="submit" value="Prijavi se" /> </div>
-                </div>
-            </div>
-            </form>
-
-    </div>
-
-</body>
 
 </html>

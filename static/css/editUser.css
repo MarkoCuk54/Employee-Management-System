@@ -1,69 +1,108 @@
-body {
-    padding: 0;
+*{
     margin: 0;
-    font-family: "Varela Round", sans-serif;
-    background-image: url("./whitebg.jpg");
+    padding: 0;
+    font-family: sans-serif;	
 }
 
-.form-nazad {
-    position: absolute;
-    bottom: 10px;
-    width: 50%;
-    margin-left: 55%;
+
+.hero{
+    position: relative;
+    width: 100%;
+    height: 90vh;
 }
 
-.button-nazad {
-    background-color: #5ccbcb;
-    color: black;
-    border-radius: 10px;
-    font-size: 20px;
-    padding: 0 20px;
+nav{
+    display: flex;
+    width: 84%;
+    margin: auto;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.button-nazad:hover {
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #093451;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #1e71af;
+}
+
+.detel{
+    margin-left: 8%;
+    margin-top: 13%;
+}
+
+.detel h1{
+   font-size: 50px;
+   color: #093451;
+   margin-bottom: 20px;
+}
+
+.detel p{
+    color: #1e71af;;
+    line-height: 42px;
+    font-style: italic;
+}
+
+.bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #1e71af 50%, white 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+
+  .footer {
+    padding: 200pt;
+	  text-align: center;
+    background-position: center;
+}
+
+.footer a{
+  text-decoration-line: none;
+}
+
+input[type=submit] {
+    background-color: #1e71af;
+    color: white;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    background-color: #046c94;
-    color: #fff;
-}
+    size: 25px;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #093451;
+  }
 
-.info {
-    margin: 40px 40px 0px 40px;
-}
-
-.color-font {
-    color: #f32424;
-}
-
-.form-edit {
-    position: absolute;
-    bottom: 10px;
-    width: 50%;
-    margin-left: 35%;
-}
-
-.form-edit button {
-    background-color: #2155cd;
-    color: black;
-    border-radius: 10px;
-    font-size: 20px;
-    padding: 0 20px;
-}
-
-.form-edit button:hover {
-    cursor: pointer;
-    background-color: #046c94;
-    color: #fff;
-}
-
-#editButton {
-    background-color: #5ccbcb;
-    color: black;
-    border-radius: 10px;
-    margin-left: 20px;
-}
-
-#editButton:hover {
-    cursor: pointer;
-    background-color: #046c94;
-    color: #fff;
-}

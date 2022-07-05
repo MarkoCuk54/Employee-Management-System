@@ -1,182 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;	
+	font-family: Raleway, sans-serif;
+}
+
 body {
-    font-size: 1.6rem;
-    font-family: "Open Sans", sans-serif;
-    color: #2b3e51;
-    background-image: url("../img/login-bg.jpg");
-    background-size: cover;
+	background: linear-gradient(90deg, #EFF6F9, #1E71AF);		
 }
 
-h2 {
-    font-weight: 300;
-    text-align: center;
-    margin: 15px;
-    color: #151d3b;
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 70vh;
 }
 
-p {
-    position: relative;
+.screen {		
+	background: linear-gradient(90deg, #093451, #1E71AF);		
+	position: relative;	
+	height: 600px;
+	width: 360px;	
+	box-shadow: 0px 0px 24px #1E71AF;
+    border-radius: 25px;
+    border: 2px; 
 }
 
-a,
-a:link,
-a:visited,
-a:active {
-    color: #3ca9e2;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+.screen__content {
+	z-index: 1;
+	position: relative;	
+	height: 100%;
+    border-radius: 25px;
+    border: 2px; 
 }
 
-a:focus,
-a:hover,
-a:link:focus,
-a:link:hover,
-a:visited:focus,
-a:visited:hover,
-a:active:focus,
-a:active:hover {
-    color: #329dd5;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
+.screen__background {		
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);	
 }
 
-#login-form-wrap {
-    background-color: #f7f7f7;
-    width: 35%;
-    margin: 10% auto;
-    text-align: center;
-    padding: 20px 0 0 0;
-    border-radius: 10px;
-    box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-bottom: 20px;
-    opacity: 90%;
+.screen__background__shape {
+	transform: rotate(45deg);
+	position: absolute;
 }
 
-h2 {
-    font-family: "Courier New", Courier, monospace;
+.screen__background__shape1 {
+	height: 520px;
+	width: 520px;
+	background: #FFF;	
+	top: -50px;
+	right: 120px;	
+	border-radius: 0 72px 0 0;
 }
 
-.error {
-    text-align: center;
-    color: whitesmoke;
+.screen__background__shape2 {
+	height: 220px;
+	width: 220px;
+	background: #1E71AF;	
+	top: -172px;
+	right: 0;	
+	border-radius: 32px;
 }
 
-#login-form {
-    padding: 0 60px;
+.screen__background__shape3 {
+	height: 540px;
+	width: 190px;
+	background: linear-gradient(270deg, #093451, #1E71AF);
+	top: -24px;
+	right: 0;	
+	border-radius: 32px;
 }
 
-input {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    outline: none;
-    height: 60px;
-    line-height: 60px;
-    border-radius: 4px;
+.screen__background__shape4 {
+	height: 400px;
+	width: 200px;
+	background: #1E71AF;	
+	top: 420px;
+	right: 50px;	
+	border-radius: 60px;
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 60%;
-    padding: 0 0 0 10px;
-    margin: 20px 0px 0px 0px;
-    color: black;
-    border: 1px solid #151d3b;
-    font-style: normal;
-    font-size: 16px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    position: relative;
-    display: inline-block;
-    background: none;
+.login {
+	width: 320px;
+	padding: 30px;
+	padding-top: 156px;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus {
-    border-color: #3ca9e2;
+.login__field {
+	padding: 20px 0px;	
+	position: relative;	
 }
 
-input[type="text"]:focus:invalid,
-input[type="password"]:focus:invalid {
-    color: #cc1e2b;
-    border-color: #cc1e2b;
+.login__icon {
+	position: absolute;
+	top: 30px;
+	color: #1E71AF;
 }
 
-input[type="text"]:valid~.validation,
-input[type="password"]:valid~.validation {
-    display: block;
-    border-color: #0c0;
+.login__input {
+	border: none;
+	border-bottom: 2px solid #EFF6F9;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 75%;
+	transition: .2s;
 }
 
-input[type="text"]:valid~.validation span,
-input[type="password"]:valid~.validation span {
-    background: #0c0;
-    position: absolute;
-    border-radius: 6px;
+.login__input:active,
+.login__input:focus,
+.login__input:hover {
+	outline: none;
+	border-bottom-color: #1E71AF;
 }
 
-input[type="text"]:valid~.validation span:first-child,
-input[type="password"]:valid~.validation span:first-child {
-    top: 30px;
-    left: 14px;
-    width: 20px;
-    height: 3px;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
+.login__submit {
+	background: #fff;
+	font-size: 14px;
+	margin-top: 30px;
+	padding: 16px 20px;
+	border-radius: 26px;
+	border: 1px solid #EFF6F9;
+	text-transform: uppercase;
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	color: #093451;
+	box-shadow: 0px 2px 2px #093451;
+	cursor: pointer;
+	transition: .2s;
 }
 
-input[type="text"]:valid~.validation span:last-child,
-input[type="password"]:valid~.validation span:last-child {
-    top: 35px;
-    left: 8px;
-    width: 11px;
-    height: 3px;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+.login__submit:active,
+.login__submit:focus,
+.login__submit:hover {
+	border-color: #1E71AF;
+	outline: none;
 }
 
-.validation {
-    display: none;
-    position: absolute;
-    content: " ";
-    height: 60px;
-    width: 30px;
-    right: 15px;
-    top: 0px;
+.button__icon {
+	font-size: 24px;
+	margin-left: auto;
+	color: #1E71AF;
 }
 
-input[type="submit"] {
-    border: none;
-    display: block;
-    background-color: #151d3b;
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-    font-size: 18px;
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-    width: 30%;
-    margin-bottom: 20px;
-}
-
-input[type="submit"]:hover {
-    background-color: #329dd5;
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-
-#create-account-wrap {
-    background-color: #eeedf1;
-    color: #8a8b8e;
-    font-size: 14px;
-    width: 100%;
-    padding: 10px 0;
-    border-radius: 0 0 4px 4px;
+.footer {
+    padding: 70px;
+	text-align: center;
+    background-position: center;
+	color: #093451;
 }

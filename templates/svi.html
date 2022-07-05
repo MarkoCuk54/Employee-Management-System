@@ -1,109 +1,96 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@300;400;700&family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="../static/css/home.css" />
-        <link rel="stylesheet" href="../static/css/svi.css" />
-        <title>svi zaposlenici</title>
-    </head>
-    
-    <body>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/css/home.css" />
+    <link rel="stylesheet" href="../static/css/svi.css" />
+    <title>Svi zaposlenici</title>
+</head>
+
+<body>
+    <div class="hero">
         <nav>
-            <div class="newNav">
-                <form action="/logout">
-                    <button id="logout" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white; font-size: large;">Odjavi se</button>
-                </form>
-                <br />
-                <form action="/obrasci">
-                    <button id="obrasci" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white; font-size: large;">Obrasci</button>
-                </form>
-                <br />
-                <form action="/događaji">
-                    <button id="događaji" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white; font-size: large;">Događaji</button>
-                </form>
-                <br />
-                <form action="/dodaj">
-                    <button id="dodaj" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white; font-size: large;">Dodaj zaposlenika</button>
-                </form>
-                <br />
-                <form action="/svi">
-                    <button id="svi" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white; font-size: large;">Svi zaposlenici</button>
-                </form>
-                <br />
-                <form action="/home">
-                     <button id="home" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white;font-size: large;">Početna</button>
-                </form>
-                </div>
-                <h1 style="color: #1aa4bc;">Pozdrav, {{data[0][1]}}</h1>
-            </div>
+            <img src="https://db3pap006files.storage.live.com/y4mF56np5tDzVNvpWxb_T7c7xDdDATRqQBq8mKK96-zSzDASofj7B2FCLeTgM3ZpiELQPSgA5CE223xZBCq5Sl7N0qUu2jQ5_VmQfERKlqOtjVz8QRgaIIXt1cAM-wdxuEuVUw-tVWCFy_h2Jo1UpXKVX5QqUTCQlYff5mFgNiByCqWegZIGQRJQJ0NVDqydHyZogSkTK1GyHZ_hO-pCHHqwA/logo.png?psid=1&width=230&height=112" class="logo">
+            <ul>
+                <li><a href="/home">Naslovnica</a></li>
+                <li><a href="/svi">Svi zaposlenici</a></li>
+                <li><a href="/dodaj">Dodaj zaposlenika</a></li>
+                <li><a href="/obrasci">Obrasci</a></li>
+                <li><a href="/logout">Odjavi se</a></li>
+            </ul>
         </nav>
 
-        <div class="hero-image">
-            <div class="hero-text">
-                <img src="../static/img/emerus.jpg" alt="emerus" width="500" height="128" />
-            </div>
-        </div>
-<br>
-<form action="/editUser" method="POST">
-    <input style="margin-left: 70px" autocomplete="off" type="number" min=1 max=999 name="edit" placeholder="ID">
-    <input id="edit" type="submit" value="Uredi zaposlenika" style="background-color: #1aa4bc;border-color: #1aa4bc; font-size: medium;color: white">
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pretraži po imenu">
-</form>
-</br>
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
 
-<div class="table-wrapper">
-    <table class="fl-table" id="myTable">
-        <thead style="text-align: center">
-            <tr>
-                <th>ID</th>
-                <th>Ime</th>
-                <th>Prezime</th>
-                <th>Datum rođenja</th>
-                <th>Adresa</th>
-                <th>Email</th>
-                <th>Broj mobitela</th>
-                <th>Odjel</th>
-                <th>Pozicija</th>
-                <th>Opcija</th>
+        <br>
+        <br>
+        <br>
 
-            </tr>
-        </thead>
-        <div>
-            {% for row in data %}
-            <div>
-                <tbody>
+        <form action="/editUser" method="POST">
+            <input style="margin-left: 150px; height: 40px;width: 50px;" autocomplete="off" type="number" min=1 max=999 name="edit" placeholder="ID">
+            <input id="edit" type="submit" value="Uredi zaposlenika" style="background-color: #093451;border-color: #093451; font-size: medium;color: white; border-radius: 22px;height: 40px;width: 150px;">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pretraži po imenu" style="margin-right: 155px;border-radius: 22px;">
+        </form>
+        </br>
+
+        <div class="table-wrapper" style="margin-left: 150px; margin-right: 155px;">
+            <table class="fl-table" id="myTable">
+                <thead style="text-align: center; border-radius: 22px;">
                     <tr>
-                        <td class="idSearch">{{row[0]}}</td>
-                        <td>{{ row[1] }}</td>
-                        <td>{{ row[2] }}</td>
-                        <td>{{ row[7] }}</td>
-                        <td>{{ row[3] }}</td>
-                        <td>{{ row[8] }}</td>
-                        <td>{{ row[4] }}</td>
-                        <td>{{ row[5] }}</td>
-                        <td>{{ row[6] }}</td>
-                        <td><input type="button" value="Izbriši" action="/deleteUser" onclick="deleteRow(this)" style="background-color: #1aa4bc; border-color: #1aa4bc;color: white; font-size: large;">
-                        </td>
+                        <th>ID</th>
+                        <th>Ime</th>
+                        <th>Prezime</th>
+                        <th>Datum rođenja</th>
+                        <th>Adresa</th>
+                        <th>Email</th>
+                        <th>Broj mobitela</th>
+                        <th>Odjel</th>
+                        <th>Pozicija</th>
+                        <th>Opcija</th>
+
                     </tr>
-                </tbody>
-                {% endfor %}
+                </thead>
+                <div>
+                    {% for row in data %}
+                    <div>
+                        <tbody>
+                            <tr>
+                                <td class="idSearch">{{row[0]}}</td>
+                                <td>{{ row[1] }}</td>
+                                <td>{{ row[2] }}</td>
+                                <td>{{ row[7] }}</td>
+                                <td>{{ row[3] }}</td>
+                                <td>{{ row[8] }}</td>
+                                <td>{{ row[4] }}</td>
+                                <td>{{ row[5] }}</td>
+                                <td>{{ row[6] }}</td>
+                                <td><a href="/deleteUser" onclick="deleteRow(this)" style="text-decoration: none; color: #093451; font-size: small;">Izbriši</a></td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
 
                 <tbody></tbody>
     </table>
-
 </div>
-        <div class="footer">
-            <h2 style="color: #1aa4bc;">Emerus, 2022.</h2>
-        </div>
+
+<div class="footer">
+    <a href="https://www.facebook.com/emerus.eu/">
+        <img src="https://db3pap006files.storage.live.com/y4mdhlYKefN6ZjzbX3OwGib504rtBl0ENcbCtIUmLrGuTouKr2f4qWL8p8xl89SKF3wsuaZZpwDJXIx_v2MZYBFRwlJhLR5NadTER4isJOEMF-QFE5ymlAxIXh_8sPd3RO4Hprhf77SQ7rlLvIqZrDCNOGLv85vrvfIgx5WvUdYtoyyFr-zmd_tELhKlBmR4bbWbJdY8HV69i51XNkgfiCtAA/facebook.png?psid=1&width=20&height=20&cropMode=center" style="width: 25px;">
+    </a>
+
+    <a href="https://ba.linkedin.com/company/emeruseu">
+        <img src="https://db3pap006files.storage.live.com/y4m1EqU-JPW73s_vZ3rROVGDjMtNflU1cAOxneoORqlaV2Ejv--ejwTYzP5yDHvYCxQSAoPJbQ4foOx6aY9C0VO0VJFpxq5whs0UHnNNis_4yRbql_ppGW_idNfY_yMOhE3z45CISqxHQ7GxTUUZyEJTD_wqHLW7prp88ccb-G8eDtKoqpUBSHMmPtk9wNl8Ybcn4JB-nQFIjO4MyZk7gWvoQ/linkedin.png?psid=1&width=20&height=20&cropMode=center" style="width: 25px;">
+    </a>
+
+    <a href="https://www.instagram.com/emerus.doo/?hl=en">
+        <img src="https://db3pap006files.storage.live.com/y4m9ycuV2_x6MO0Pe2hsiXxN0ssCnOBw3D02aQU7lxeDnldknX-0UQXop-pAy0fJa5s7gCyS5d87-IV1SDhU5bAUysFJ_okjVkkD4P2TlxApFGgzt2mW_eHW6xa6npb_9MNgmZ9uMe9CneHseTPaMU3_VqnlR1vHhpJc2_lYyjTBGaWdZ7bDS0pz35Z3p-PxgNw4oBfKSf_-I1UD1E6qIIg1w/instagram.png?psid=1&width=20&height=20&cropMode=center" style="width: 25px;">
+    </a>
+</div>
     </body>
 
     <script language="javascript">

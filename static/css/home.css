@@ -1,177 +1,94 @@
-body,
-html {
-    height: 100%;
-    font-family: "Lato", sans-serif;
-    background-image: url("../img/login-bg.jpg");
-    color: antiquewhite;
-}
-
-.btn-nav {
-    background-color: #1aa4bc;
-    color: white;
-    display: inline-block;
-    padding: 12px;
-    text-decoration: none;
-    border-color: #1aa4bc;
-}
-
-.newNav {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    margin-left: 1200px;
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;	
 }
 
 
-/* The hero image */
-
-.hero-image {
-    background-image: url("../img/dron.jpg");
-    height: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.hero{
     position: relative;
-}
-
-
-/* Place text in the middle of the image */
-
-.hero-text {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-}
-
-
-/* Increase the font size of the <h1> element */
-
-.header h1 {
-    font-size: 40px;
-}
-
-
-/* Style the top navigation bar */
-
-
-/* Style the navigation bar links */
-
-.navbar form {
-    float: left;
-    /* Float links side by side */
-    text-align: center;
-    /* Center-align text */
-    width: 12%;
-    /* Equal width (5 icons with 20% width each = 100%) */
-    padding: 12px 0;
-    /* Some top and bottom padding */
-    transition: all 0.3s ease;
-    /* Add transition for hover effects */
-    color: white;
-    /* White text color */
-    font-size: 36px;
-    /* Increased font size */
-}
-
-
-/* Right-aligned link */
-
-.navbar form.right {
-    float: right;
-    /* Float a link to the right */
-}
-
-
-/* Change color on hover/mouse-over */
-
-.navbar form:hover {
-    background-color: #1363df;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-/* Create two unequal columns that sits next to each other */
-
-
-/* Sidebar/left column */
-
-.side {
-    flex: 30%;
-    /* Set the width of the sidebar */
-    background-color: #f1f1f19c;
-    /* Grey background color */
-    padding: 20px;
-    /* Some padding */
-}
-
-
-/* Main column */
-
-.main {
-    flex: 70%;
-    /* Set the width of the main content */
-    background-color: rgba(255, 255, 255, 0.527);
-    /* White background color */
-    padding: 20px;
-    /* Some padding */
-}
-
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-
-@media screen and (max-width: 700px) {
-    .row {
-        flex-direction: column;
-    }
-}
-
-.footer {
-    padding: 20px;
-    /* Some padding */
-    text-align: center;
-    /* Center text*/
-    /* Grey background */
-}
-
-.icon-bar {
     width: 100%;
-    /* Full-width */
-    background-color: #555;
-    /* Dark-grey background */
-    overflow: auto;
-    /* Overflow due to float */
+    height: 90vh;
 }
 
-.icon-bar a {
-    float: left;
-    /* Float links side by side */
-    text-align: center;
-    /* Center-align text */
-    width: 12%;
-    /* Equal width (5 icons with 20% width each = 100%) */
-    padding: 12px 0;
-    /* Some top and bottom padding */
-    transition: all 0.3s ease;
-    /* Add transition for hover effects */
-    color: white;
-    /* White text color */
-    font-size: 36px;
-    /* Increased font size */
+nav{
+    display: flex;
+    width: 84%;
+    margin: auto;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.icon-bar a:hover {
-    background-color: #000;
-    /* Add a hover color */
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
 }
 
-.active {
-    background-color: #1aa4bc;
-    /* Add an active/current color */
+nav ul li a{
+    text-decoration: none;
+    color: #093451;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #1e71af;
+}
+
+.detel{
+    margin-left: 8%;
+    margin-top: 13%;
+}
+
+.detel h1{
+   font-size: 50px;
+   color: #093451;
+   margin-bottom: 20px;
+}
+
+.detel p{
+    color: #1e71af;;
+    line-height: 42px;
+    font-style: italic;
+}
+
+.bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #1e71af 50%, white 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
+
+  .footer {
+    padding: 200pt;
+	  text-align: center;
+    background-position: center;
+}
+
+.footer a{
+  text-decoration-line: none;
 }
