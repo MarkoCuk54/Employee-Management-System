@@ -13,7 +13,9 @@
 <body>
     <div class="hero">
         <nav>
-            <img src="https://db3pap006files.storage.live.com/y4mF56np5tDzVNvpWxb_T7c7xDdDATRqQBq8mKK96-zSzDASofj7B2FCLeTgM3ZpiELQPSgA5CE223xZBCq5Sl7N0qUu2jQ5_VmQfERKlqOtjVz8QRgaIIXt1cAM-wdxuEuVUw-tVWCFy_h2Jo1UpXKVX5QqUTCQlYff5mFgNiByCqWegZIGQRJQJ0NVDqydHyZogSkTK1GyHZ_hO-pCHHqwA/logo.png?psid=1&width=230&height=112" class="logo">
+            <a href="https://emerus.eu/en/">
+                <img src="https://db3pap006files.storage.live.com/y4mF56np5tDzVNvpWxb_T7c7xDdDATRqQBq8mKK96-zSzDASofj7B2FCLeTgM3ZpiELQPSgA5CE223xZBCq5Sl7N0qUu2jQ5_VmQfERKlqOtjVz8QRgaIIXt1cAM-wdxuEuVUw-tVWCFy_h2Jo1UpXKVX5QqUTCQlYff5mFgNiByCqWegZIGQRJQJ0NVDqydHyZogSkTK1GyHZ_hO-pCHHqwA/logo.png?psid=1&width=230&height=112" class="logo">
+            </a>
             <ul>
                 <li><a href="/home">Naslovnica</a></li>
                 <li><a href="/svi">Svi zaposlenici</a></li>
@@ -32,8 +34,8 @@
         <br>
 
         <form action="/editUser" method="POST">
-            <input style="margin-left: 150px; height: 40px;width: 50px;" autocomplete="off" type="number" min=1 max=999 name="edit" placeholder="ID">
-            <input id="edit" type="submit" value="Uredi zaposlenika" style="background-color: #093451;border-color: #093451; font-size: medium;color: white; border-radius: 22px;height: 40px;width: 150px;">
+            <input style="margin-left: 150px; height: 30px;width: 50px;" autocomplete="off" type="number" min=1 max=999 name="edit" placeholder="ID">
+            <input id="edit" type="submit" value="Uredi zaposlenika">
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pretraži po imenu" style="margin-right: 155px;border-radius: 22px;">
         </form>
         </br>
@@ -69,7 +71,7 @@
                                 <td>{{ row[4] }}</td>
                                 <td>{{ row[5] }}</td>
                                 <td>{{ row[6] }}</td>
-                                <td><a href="/deleteUser" onclick="deleteRow(this)" style="text-decoration: none; color: #093451; font-size: small;">Izbriši</a></td>
+                                <td><a href="#" onclick="deleteRow(this)" style="text-decoration: none; color: #093451; font-size: small;">Izbriši</a></td>
                             </tr>
                         </tbody>
                         {% endfor %}
@@ -141,9 +143,9 @@
 function deleteRow(r) {
     var i = r.parentNode.parentNode.rowIndex;
     document.getElementById("myTable").deleteRow(i);
-    document.getElementById("radnici").deleteRow(i);
 }
     </script>
+
 
 
 

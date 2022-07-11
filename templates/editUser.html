@@ -13,7 +13,9 @@
 <body>
     <div class="hero">
         <nav>
-            <img src="https://db3pap006files.storage.live.com/y4mF56np5tDzVNvpWxb_T7c7xDdDATRqQBq8mKK96-zSzDASofj7B2FCLeTgM3ZpiELQPSgA5CE223xZBCq5Sl7N0qUu2jQ5_VmQfERKlqOtjVz8QRgaIIXt1cAM-wdxuEuVUw-tVWCFy_h2Jo1UpXKVX5QqUTCQlYff5mFgNiByCqWegZIGQRJQJ0NVDqydHyZogSkTK1GyHZ_hO-pCHHqwA/logo.png?psid=1&width=230&height=112" class="logo">
+            <a href="https://emerus.eu/en/">
+                <img src="https://db3pap006files.storage.live.com/y4mF56np5tDzVNvpWxb_T7c7xDdDATRqQBq8mKK96-zSzDASofj7B2FCLeTgM3ZpiELQPSgA5CE223xZBCq5Sl7N0qUu2jQ5_VmQfERKlqOtjVz8QRgaIIXt1cAM-wdxuEuVUw-tVWCFy_h2Jo1UpXKVX5QqUTCQlYff5mFgNiByCqWegZIGQRJQJ0NVDqydHyZogSkTK1GyHZ_hO-pCHHqwA/logo.png?psid=1&width=230&height=112" class="logo">
+            </a>
             <ul>
                 <li><a href="/home">Naslovnica</a></li>
                 <li><a href="/svi">Svi zaposlenici</a></li>
@@ -43,7 +45,7 @@
 
         <form style="text-align: left; display: contents" method="post">
             <p style="display: contents">Trenutni: {{data[5]}}</p>
-            <label style="margin-left: 40px" for="department">Promjeni odjel : </label>
+            <label style="margin-left: 40px" for="department">Promjeni odjel: </label>
             <select placeholder="Odjel" name="department" id="subject_input" required value="{{request.form.subject_input}}" style="border-radius: 22px;height: 40px;">
                 <option disabled hidden selected>Odaberite odjel</option>
                 <option value="Administracija">Administracija</option>
@@ -71,20 +73,20 @@
                 <option value="Tehnički odjel">Tehnički odjel</option>
                 <option value="Uprava">Uprava</option>
               </select>
-            <input type="submit" value="Promjeni" id="editButton" action="/changeDepartment" style="border-radius: 22px; height: 40px;width: 100px;">
+            <input type="submit" value="Promjeni" id="editButton" action="/changeDepartment" onclick="changeDepartment()" style="border-radius: 22px; height: 40px;width: 100px" >
         </form>
         <br><br><br><br>
         <h4>Pozicija:</h4>
         <form style="text-align: left; display: contents" action="/changePosition" method="post">
             <p style="display: contents">Trenutna: {{data[6]}}</p>
             <label style="margin-left: 40px" for="position">Promjeni poziciju: </label>
-            <input type="text" placeholder="Nova pozicija" name="position" id="position" style="border-radius: 22px; height: 40px;width: 220px;">
+            <input type="text" placeholder="Nova pozicija" name="position" id="position" style=" border-radius: 22px; height: 40px;width: 220px;">
             <input type="submit" value="Promjeni" id="editButton" style="border-radius: 22px; height: 40px;width: 100px;">
         </form>
       <br><br><br><br>
     </div>
     <form class="form-nazad" action="/svi" style="margin-left: 8%">
-        <button class="button-nazad" style="background-color: #1e71af; color: white; border: none; border-radius: 22px;width: 100px; height: 40px;">Nazad</button>
+        <input type="submit" value="Nazad" id="editButton" style="border-radius: 22px; height: 40px;width: 100px;">
     </form>
     <br>
 
@@ -104,3 +106,10 @@
 </body>
 
 </html>
+
+<script>
+    function changeDepartment()
+            {
+                table.rows[rIndex].cells[5].innerHTML = document.getElementById("department").value;
+            }
+</script>

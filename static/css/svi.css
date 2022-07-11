@@ -439,3 +439,19 @@ html {
 .footer a{
   text-decoration-line: none;
 }
+
+input[type=submit] {
+  background-color: #1e71af;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  size: 25px;
+  width: 150px;
+  height: 40px;
+  border-radius: 22px;
+}
+
+input[type=submit]:hover {
+  background-color: #093451;
+}

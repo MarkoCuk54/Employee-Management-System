@@ -50,18 +50,6 @@ def svi():
     data = cur.fetchall()
     return render_template("svi.html", data = data)
 
-@app.route('/deleteUser', methods=["GET", "DELETE"])
-def deleteUser():
-    try:
-        id = request.form["id"]
-        db.session.query(Feedback).filter(Feedback.id==id).delete()
-        db.session.commit()
-        message='Uspješno ste izbrisali zaposlenika'
-        return render_template('error.html', message=message)
-    except:
-        message = "ID ne postoji u Bazi"
-        return render_template('error.html', message=message)
-
 @app.route('/editUser', methods=["GET", "POST"])
 def editUser ():
         id =  request.form['edit']
@@ -119,7 +107,7 @@ def submitNoviRadnik():
             data = Feedback(firstname, lastname, birthday, adress, email, phone, department, position)
             db.session.add(data)
             db.session.commit()
-            return render_template('dodaj.html')
+            return render_template('svi.html')
         except:
             cursor.execute("ROLLBACK")
             conn.commit()
