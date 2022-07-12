@@ -121,4 +121,5 @@ def obrasci():
     return render_template("obrasci.html", data = data)
 # auto restart server on change
 
+
 app.run(debug=True)
